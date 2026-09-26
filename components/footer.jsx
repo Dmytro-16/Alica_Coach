@@ -41,24 +41,22 @@ export default function Footer() {
       <div className="footer-right">
         <p className="footer-social">
           <a
-            className="footer-link"
+            className="footer-social-link"
             href="https://www.instagram.com/aliciasemenchuk"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Instagram
+            <i className="fa-brands fa-instagram"></i>
           </a>
-          <span className="footer-dot" aria-hidden="true">
-            {" "}
-            ·{" "}
-          </span>
+
+          <span className="footer-separator" aria-hidden="true" />
           <a
-            className="footer-link"
+            className="footer-social-link"
             href="https://www.tiktok.com/@aliciasemenchuk"
             target="_blank"
             rel="noopener noreferrer"
           >
-            TikTok
+            <i className="fa-brands fa-tiktok"></i>
           </a>
         </p>
         <div className="footer-text-container">
@@ -73,4 +71,9 @@ export default function Footer() {
       </div>
     </footer>
   );
+}
+
+// YouTube LOGO
+{
+  /* <i class="fa-brands fa-youtube"></i> */
 }

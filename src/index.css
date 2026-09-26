@@ -95,7 +95,15 @@ a {
 
 .signature-container {
   /* border: solid 2px var(--color-accent, #050505); */
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
   padding: 0.5rem;
+}
+
+.signature-container h1 {
+  margin: 0;
+  line-height: 1.1;
 }
 .signature-link {
   font-family: var(--font-signature, "Brittany Signature", cursive);
@@ -163,32 +171,47 @@ a {
 /* — FOOTER — */
 
 .footer-container {
+  --footer-font-size: 11px;
+  --footer-signature-name-size: 26px;
+  --footer-social-icon-size: 18px;
+
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  gap: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   margin-top: auto;
   width: 100%;
   background-color: var(--footer-bg, #242321);
   color: var(--footer-text, #e8ddcc);
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--footer-font-size);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
 }
 
 .footer-container .signature-container {
-  border: solid 1px var(--footer-text, #e8ddcc);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  padding: 0;
+  justify-content: center;
   align-items: flex-start;
-  font-size: var(--nav-font-size, 10px);
+  gap: 0.85rem;
 }
 
 .footer-container .signature-link {
   color: var(--color-blanc, #ffffff);
+  font-size: var(--footer-signature-name-size);
+  line-height: 1;
+  justify-content: flex-start;
+}
+
+.footer-container .signature-text {
+  justify-content: flex-start;
+  gap: 0.65rem;
 }
 
 .footer-container .signature-text p {
   color: var(--footer-text, #e8ddcc);
-  font-size: var(--nav-font-size, 8px);
+  font-size: var(--footer-font-size);
 }
 
 .footer-container .signature-separator {
@@ -198,6 +221,7 @@ a {
 .footer-link {
   color: var(--footer-text, #e8ddcc);
   text-decoration: none;
+  gap: 0.25rem;
 }
 
 .footer-link:hover {
@@ -209,14 +233,14 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  /* border: solid 1px var(--footer-text, #e8ddcc); */
+  gap: 0.65rem;
 }
 .footer-text {
-  font-family: var(--font-texte, "Montserrat", sans-serif);
-  font-size: var(--nav-font-size, 10px);
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
   font-weight: var(--nav-font-weight, 400);
-  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  letter-spacing: inherit;
   color: var(--footer-text, #e8ddcc);
 }
 
@@ -232,30 +256,28 @@ a {
 
 .footer-left {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex: 0 1 auto;
   align-items: center;
-  gap: 1rem;
 }
 
 .footer-right {
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
-  gap: 0.75rem;
-  padding: 0.5rem;
-  border: solid 1px var(--footer-text, #e8ddcc);
+  gap: 0.5rem;
 }
 
 .footer-legal {
+  flex: 1 1 16rem;
   text-align: center;
-  font-size: var(--nav-font-size, 12px);
-  border: solid 1px var(--footer-text, #e8ddcc);
+  font-size: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.35rem;
 }
 
 .contact-snippet {
@@ -264,19 +286,70 @@ a {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .footer-copyright {
   margin: 0;
+  line-height: 1.4;
 }
 
 .footer-legal-links {
-  margin: 0.25rem 0 0;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
   margin: 0;
+}
+
+.footer-social-link {
+  color: var(--footer-text, #e8ddcc);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.footer-social-link:hover {
+  color: var(--color-accent-clair, #d5bd91);
+}
+
+.footer-social-link .fa-brands {
+  font-size: var(--footer-social-icon-size);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-container .signature-container,
+  .footer-container .signature-text {
+    align-items: center;
+  }
+
+  .footer-container .signature-text,
+  .footer-container .signature-link {
+    justify-content: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-social,
+  .footer-text-container {
+    justify-content: center;
+  }
 }
 
 .footer-dot {

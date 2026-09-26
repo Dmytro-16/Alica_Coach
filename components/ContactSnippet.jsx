@@ -8,7 +8,6 @@ export default function ContactSnippet() {
       {/* <a href={`mailto:${EMAIL}`} className="footer-link">
         {EMAIL}
       </a> */}
-      <span className="footer-dot" aria-hidden="true"></span>
       <Link to="/contact" className="footer-link">
         Contact
       </Link>
