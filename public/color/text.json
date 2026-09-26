@@ -1,0 +1,154 @@
+{
+  "identite_visuelle": {
+    "style": "Féminin, élégant, premium, naturel, bien-être",
+    "ambiance": "Luxe discret, mouvement, énergie, sérénité"
+  },
+  "couleurs": {
+    "principal": {
+      "nom": "Noir profond",
+      "hex": "#242321",
+      "usage": "Titres, navigation, footer, textes forts"
+    },
+    "secondaire": {
+      "nom": "Beige champagne",
+      "hex": "#E8DDCC",
+      "usage": "Fonds, blocs, sections"
+    },
+    "fond": {
+      "nom": "Ivoire chaud",
+      "hex": "#F8F5EF",
+      "usage": "Fond principal du site"
+    },
+    "accent": {
+      "nom": "Or champagne",
+      "hex": "#B89558",
+      "usage": "Boutons, détails, icônes, séparateurs"
+    },
+    "accent_clair": {
+      "nom": "Sable doré",
+      "hex": "#D5BD91",
+      "usage": "Survols, arrière-plans secondaires, éléments décoratifs"
+    },
+    "texte_secondaire": {
+      "nom": "Taupe",
+      "hex": "#756E64",
+      "usage": "Paragraphes, descriptions, informations secondaires"
+    },
+    "blanc": {
+      "nom": "Blanc",
+      "hex": "#FFFFFF",
+      "usage": "Texte sur fonds foncés, cartes et contrastes"
+    }
+  },
+  "typographie": {
+    "titres": {
+      "police": "Cormorant Garamond",
+      "style": "Serif élégante",
+      "poids": ["400", "500", "600"],
+      "usage": "H1, H2, H3, citations, titres de sections"
+    },
+    "texte": {
+      "police": "Montserrat",
+      "style": "Sans-serif moderne",
+      "poids": ["300", "400", "500", "600"],
+      "usage": "Paragraphes, navigation, boutons, descriptions"
+    },
+    "signature": {
+      "police": "Brittany Signature",
+      "alternative": "Allura",
+      "style": "Script manuscrit",
+      "usage": "Prénom, signatures, petites phrases décoratives"
+    }
+  },
+  "hierarchie_typographique": {
+    "H1": {
+      "police": "Cormorant Garamond",
+      "taille_desktop": "64px",
+      "taille_mobile": "42px",
+      "poids": "500",
+      "couleur": "#242321"
+    },
+    "H2": {
+      "police": "Cormorant Garamond",
+      "taille_desktop": "46px",
+      "taille_mobile": "34px",
+      "poids": "500",
+      "couleur": "#242321"
+    },
+    "H3": {
+      "police": "Cormorant Garamond",
+      "taille_desktop": "30px",
+      "taille_mobile": "26px",
+      "poids": "500",
+      "couleur": "#242321"
+    },
+    "corps": {
+      "police": "Montserrat",
+      "taille": "16px",
+      "interligne": "1.7",
+      "poids": "400",
+      "couleur": "#756E64"
+    },
+    "navigation": {
+      "police": "Montserrat",
+      "taille": "12px",
+      "espacement_lettres": "0.08em",
+      "majuscule": false,
+      "poids": "500"
+    },
+    "petits_titres": {
+      "police": "Montserrat",
+      "taille": "11px",
+      "espacement_lettres": "0.18em",
+      "majuscule": true,
+      "poids": "500",
+      "couleur": "#B89558"
+    },
+    "boutons": {
+      "police": "Montserrat",
+      "taille": "13px",
+      "poids": "500",
+      "couleur_texte": "#FFFFFF",
+      "couleur_fond": "#B89558"
+    }
+  },
+  "contenus": {
+    "signature": {
+      "nom": "Alicia Semenchuk",
+      "lignes": ["COACHE DE VIE", "COACHE SPORTIF", "COACH YOGA"]
+    },
+    "navigation": [
+      { "path": "/", "label": "Accueil" },
+      { "path": "/a-propos", "label": "À propos" },
+      { "path": "/accomplishments", "label": "Accompagnements" },
+      { "path": "/mon-parcours", "label": "Mon parcours" },
+      { "path": "/temoignages", "label": "Témoignages" },
+      { "path": "/rdv", "label": "RDV" },
+      { "path": "/contact", "label": "Contact" }
+    ]
+  },
+  "combinaisons": {
+    "hero": {
+      "fond": "#F8F5EF",
+      "titre": "#242321",
+      "texte": "#756E64",
+      "accent": "#B89558"
+    },
+    "section_claire": {
+      "fond": "#F8F5EF",
+      "titre": "#242321",
+      "texte": "#756E64"
+    },
+    "section_beige": {
+      "fond": "#E8DDCC",
+      "titre": "#242321",
+      "texte": "#756E64"
+    },
+    "footer": {
+      "fond": "#242321",
+      "titre": "#FFFFFF",
+      "texte": "#E8DDCC",
+      "accent": "#D5BD91"
+    }
+  }
+}

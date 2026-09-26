@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies & build
+node_modules
+dist
+dist-ssr
+build
+coverage
+
+# Vite / outils
+*.local
+.vite
+.eslintcache
+
+# Variables d'environnement (secrets locaux)
+.env
+.env.*
+!.env.example
+
+# Doc perso (machine locale — pas sur GitHub)
+INSTRUCTION.md
+
+# Éditeurs & OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.cursor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dossiers / fichiers locaux inutiles au repo
+*.tmp
+*.temp
+.cache

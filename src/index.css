@@ -1,0 +1,298 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--body-font-size, 16px);
+  line-height: var(--body-line-height, 1.7);
+  color: var(--body-color, #756e64);
+  background-color: var(--color-fond, #f8f5ef);
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.app-layout main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  color: var(--color-principal, #242321);
+}
+
+a {
+  color: var(--color-principal, #242321);
+}
+
+/* — NAVBAR — ------------------------------------------------------------ */
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--color-secondaire, #e8ddcc);
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 2rem;
+  margin: 0;
+  gap: 2rem;
+  /* border: solid 2px var(--color-accent, #050505); */
+}
+
+.nav-list li a {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: var(--nav-font-weight, 400);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  text-decoration: none;
+}
+
+/* Ligne sous le lien : de gauche à droite au survol */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-boutons, #b89558);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease-in-out;
+}
+
+.nav-list li a:hover {
+  color: var(--color-principal, #242321);
+}
+
+.nav-list li a:hover::after {
+  transform: scaleX(1);
+}
+/* — SIGNATURE — */
+
+.signature-container {
+  /* border: solid 2px var(--color-accent, #050505); */
+  padding: 0.5rem;
+}
+.signature-link {
+  font-family: var(--font-signature, "Brittany Signature", cursive);
+  font-weight: var(--font-weight-signature, 400);
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  /* border: solid 2px var(--color-accent, #050505); */
+}
+
+.signature-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.signature-text p {
+  margin: 0;
+  line-height: 1;
+  font-size: var(--nav-font-size, 11px);
+  letter-spacing: 0.18em;
+  color: var(--color-accent, #161615);
+}
+
+.signature-separator {
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent, #020202);
+}
+
+/* — BUTTON RDV — */
+.btn-rdv {
+  background-color: var(--color-boutons, #b89558);
+  padding: 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-rdv-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  color: var(--color-fond, #f8f5ef);
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: var(--nav-font-weight, 500);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  text-decoration: none;
+}
+
+.btn-rdv:hover .btn-rdv-link,
+.btn-rdv-link:hover {
+  background-color: var(--color-accent-clair, #d5bd91);
+  color: var(--color-principal, #242321);
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* — FOOTER — */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-top: auto;
+  width: 100%;
+  background-color: var(--footer-bg, #242321);
+  color: var(--footer-text, #e8ddcc);
+}
+
+.footer-container .signature-container {
+  border: solid 1px var(--footer-text, #e8ddcc);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: var(--nav-font-size, 10px);
+}
+
+.footer-container .signature-link {
+  color: var(--color-blanc, #ffffff);
+}
+
+.footer-container .signature-text p {
+  color: var(--footer-text, #e8ddcc);
+  font-size: var(--nav-font-size, 8px);
+}
+
+.footer-container .signature-separator {
+  background-color: var(--color-accent-clair, #d5bd91);
+}
+
+.footer-link {
+  color: var(--footer-text, #e8ddcc);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--color-accent-clair, #d5bd91);
+}
+
+.footer-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* border: solid 1px var(--footer-text, #e8ddcc); */
+}
+.footer-text {
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 10px);
+  font-weight: var(--nav-font-weight, 400);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  color: var(--footer-text, #e8ddcc);
+}
+
+.footer-separator {
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent-clair, #d5bd91);
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border: solid 1px var(--footer-text, #e8ddcc);
+}
+
+.footer-legal {
+  text-align: center;
+  font-size: var(--nav-font-size, 12px);
+  border: solid 1px var(--footer-text, #e8ddcc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-snippet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-legal-links {
+  margin: 0.25rem 0 0;
+}
+
+.footer-social {
+  margin: 0;
+}
+
+.footer-dot {
+  color: var(--color-accent-clair, #d5bd91);
+}
+
+.legal-page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.legal-page h1 {
+  margin-bottom: 1rem;
+}
+
+.legal-page p {
+  color: var(--body-color, #756e64);
+}
