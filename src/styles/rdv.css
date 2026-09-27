@@ -1,0 +1,75 @@
+/* Page prise de rendez-vous — Calendly (popup, charte Alicia) */
+
+.rdv-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.rdv-card {
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background-color: var(--color-secondaire, #e8ddcc);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(36 35 33 / 0.06);
+}
+
+.rdv-title {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 500;
+  color: var(--color-principal, #242321);
+  line-height: 1.2;
+}
+
+.rdv-trigger {
+  display: inline-block;
+  width: 100%;
+  max-width: 16rem;
+}
+
+.rdv-trigger:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.rdv-trigger .btn-rdv-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  cursor: inherit;
+}
+
+.rdv-fallback-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 11px);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  color: var(--body-color, #756e64);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rdv-fallback-link:hover {
+  color: var(--color-principal, #242321);
+}
+
+.rdv-setup-hint {
+  margin: 0;
+  text-align: left;
+  color: var(--body-color, #756e64);
+  font-size: var(--nav-font-size, 12px);
+  line-height: 1.6;
+}
+
+.rdv-setup-hint code {
+  font-size: 0.9em;
+  word-break: break-all;
+}

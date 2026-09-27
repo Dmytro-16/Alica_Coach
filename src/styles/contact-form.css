@@ -3,6 +3,7 @@
 .contact-title {
   text-align: center;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -10,7 +11,91 @@
   margin-top: 1.5rem;
 }
 
-.contact-form label {
+/* Deux champs côte à côte (Nom|Prénom, Email|Tél.) */
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+  width: 100%;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-row--subject-social {
+    flex-direction: column;
+  }
+}
+
+/* Sujet + bloc social / RDV (réutilise footerRight) */
+.contact-subject-label {
+  margin-bottom: -0.35rem;
+}
+
+.contact-form-row--subject-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  width: 100%;
+}
+
+.contact-form-row--subject-social select {
+  flex: 1 1 14rem;
+  max-width: 22rem;
+  margin: 0;
+}
+
+.contact-form-row--subject-social .footer-right {
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.contact-form .footer-social {
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .footer-text-container {
+  display: none;
+}
+
+.contact-form .footer-social-link {
+  color: var(--color-principal, #242321);
+}
+
+.contact-form .footer-social-link:hover {
+  color: var(--color-boutons, #b89558);
+}
+
+/* Labels en ligne : colonne gauche / colonne droite */
+label.contact-label,
+label.contact-label_2 {
+  display: block;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: var(--nav-font-weight, 500);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  color: var(--color-principal, #242321);
+}
+
+.contact-form label:not(.contact-label):not(.contact-label_2) {
   font-family: var(--font-texte, "Montserrat", sans-serif);
   font-size: var(--nav-font-size, 12px);
   font-weight: var(--nav-font-weight, 500);

@@ -5,8 +5,8 @@ import Button from "../components/buttonRdv";
 const links = [
   { to: "/", label: "Accueil" },
   { to: "/a-propos", label: "À propos" },
-  { to: "/accomplishments", label: "Accompagnements" },
-  { to: "/mon-parcours", label: "Mon parcours" },
+  { to: "/accomplishments", label: "Mon parcours" },
+  { to: "/tarifs", label: "Tarifs" },
   { to: "/temoignages", label: "Témoignages" },
   { to: "/contact", label: "Contact" },
 ];

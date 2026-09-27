@@ -1,0 +1,91 @@
+/* Page Témoignages — cartes manuelles (+ SociableKIT plus tard) */
+
+.temoignages-title {
+  text-align: center;
+}
+
+.temoignages-page {
+  max-width: 56rem;
+}
+
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.temoignage-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: var(--color-secondaire, #e8ddcc);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  box-shadow: 0 6px 18px rgb(36 35 33 / 0.05);
+}
+
+.temoignage-stars {
+  color: var(--color-boutons, #b89558);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.temoignage-text {
+  margin: 0;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--body-font-size, 16px);
+  line-height: var(--body-line-height, 1.7);
+  color: var(--body-color, #756e64);
+}
+
+.temoignage-author {
+  margin: 0;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: var(--nav-font-weight, 500);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  color: var(--color-principal, #242321);
+}
+
+.temoignages-tally {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.temoignages-tally-cta {
+  display: inline-block;
+  padding: 0.65rem 1.35rem;
+  border-radius: 30px;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: var(--nav-font-weight, 500);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  text-decoration: none;
+  color: var(--color-fond, #f8f5ef);
+  background-color: var(--color-boutons, #b89558);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.temoignages-tally-cta:hover {
+  background-color: var(--color-accent-clair, #d5bd91);
+  color: var(--color-principal, #242321);
+  transform: scale(1.02);
+}
+
+.temoignages-google {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-secondaire, #e8ddcc);
+}
+
+.temoignages-google:empty {
+  display: none;
+}

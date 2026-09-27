@@ -3,7 +3,7 @@ import Accueil from "../pages/Accueil";
 import Apropos from "../pages/A propos";
 import Accomp from "../pages/Accomp";
 import Contact from "../pages/Contact";
-import MonParcours from "../pages/Mon parcours";
+import Tarifs from "../pages/Tarifs";
 import RDV from "../pages/RDV";
 import Témoignages from "../pages/Témoignages";
 import Page404 from "../pages/404";
@@ -27,7 +27,7 @@ function App() {
           <Route path="/a-propos" element={<Apropos />} />
           <Route path="/accomplishments" element={<Accomp />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/mon-parcours" element={<MonParcours />} />
+          <Route path="/tarifs" element={<Tarifs />} />
           <Route path="/rdv" element={<RDV />} />
           <Route path="/temoignages" element={<Témoignages />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />

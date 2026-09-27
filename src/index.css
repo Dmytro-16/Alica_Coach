@@ -70,7 +70,7 @@ a {
   text-decoration: none;
 }
 
-/* Ligne sous le lien : de gauche à droite au survol */
+/* — Ligne sous le lien : de gauche à droite au survol —----------------------------------------------------*/
 .nav-list li a::after {
   content: "";
   position: absolute;
@@ -91,7 +91,7 @@ a {
 .nav-list li a:hover::after {
   transform: scaleX(1);
 }
-/* — SIGNATURE — */
+/* — SIGNATURE —----------------------------------------------------*/
 
 .signature-container {
   /* border: solid 2px var(--color-accent, #050505); */
@@ -139,7 +139,7 @@ a {
   background-color: var(--color-accent, #020202);
 }
 
-/* — BUTTON RDV — */
+/* — BUTTON RDV —----------------------------------------------------*/
 .btn-rdv {
   background-color: var(--color-boutons, #b89558);
   padding: 0;
@@ -168,7 +168,17 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 
-/* — FOOTER — */
+.btn-rdv--compact .btn-rdv-link {
+  padding: 0.35rem 0.75rem;
+  font-size: var(--footer-font-size, 10px);
+}
+
+.btn-rdv--compact:hover .btn-rdv-link,
+.btn-rdv--compact .btn-rdv-link:hover {
+  transform: scale(1.02);
+}
+
+/* — FOOTER —----------------------------------------------------*/
 
 .footer-container {
   --footer-font-size: 11px;
@@ -306,6 +316,11 @@ a {
   justify-content: flex-end;
   gap: 0.65rem;
   margin: 0;
+}
+
+.footer-social .btn-rdv {
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .footer-social-link {
