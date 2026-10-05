@@ -52,12 +52,36 @@ a {
 .nav-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
   list-style: none;
   padding: 2rem;
   margin: 0;
   gap: 2rem;
   /* border: solid 2px var(--color-accent, #050505); */
+}
+
+.nav-list > li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-lang,
+.nav-rdv {
+  flex-shrink: 0;
+}
+
+.nav-rdv .btn-rdv {
+  margin: 0;
+}
+
+/* Pas de ligne sous le lien (style nav) sur le bouton RDV */
+.nav-rdv .btn-rdv-link::after {
+  content: none;
+}
+
+.nav-rdv .btn-rdv-link:hover::after {
+  transform: none;
 }
 
 .nav-list li a {
@@ -91,6 +115,59 @@ a {
 .nav-list li a:hover::after {
   transform: scaleX(1);
 }
+
+.nav-lang .locale-dropdown {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.nav-lang .locale-dropdown-select {
+  display: block;
+  vertical-align: middle;
+  min-width: 2.75rem;
+}
+
+/* Langue — pilule discrète, alignée nav + bouton RDV */
+.locale-dropdown-select {
+  appearance: none;
+  cursor: pointer;
+  min-height: 0;
+  margin: 0;
+  padding: 0.22rem 0.65rem;
+  border: 1px solid rgb(36 35 33 / 0.12);
+  border-radius: 30px;
+  background-color: var(--color-fond, #f8f5ef);
+  text-align: center;
+  text-align-last: center;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--footer-font-size, 10px);
+  font-weight: var(--nav-font-weight, 500);
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  line-height: 1.2;
+  color: var(--color-principal, #242321);
+  box-shadow: 0 1px 2px rgb(36 35 33 / 0.04);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.locale-dropdown-select:hover,
+.locale-dropdown-select:focus {
+  border-color: var(--color-boutons, #b89558);
+  background-color: var(--color-accent-clair, #d5bd91);
+  box-shadow: 0 2px 6px rgb(36 35 33 / 0.06);
+  outline: none;
+}
+
+.locale-dropdown-select option {
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: var(--footer-font-size, 10px);
+  color: var(--color-principal, #242321);
+  background: var(--color-fond, #f8f5ef);
+}
+
 /* — SIGNATURE —----------------------------------------------------*/
 
 .signature-container {
@@ -383,4 +460,9 @@ a {
 
 .legal-page p {
   color: var(--body-color, #756e64);
+}
+
+.legal-page h2 {
+  margin: 1.75rem 0 0.65rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
 }

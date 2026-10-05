@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+.contact-intro {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: var(--body-color, #756e64);
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;

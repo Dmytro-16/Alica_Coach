@@ -1,85 +1,82 @@
+import { useTranslation } from "react-i18next";
 import "../src/styles/contact-form.css";
 import FooterRight from "../components/footerRight";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <article className="legal-page">
-      <h1 className="contact-title">Contactez-moi</h1>
-      {/* <p>
-        Formulaire et coordonnées complètes à venir. En attendant, écrivez à{" "}
-        <a href="mailto:contact@aliciasemenchuk.com">
-          contact@aliciasemenchuk.com
-        </a>
-        .
-      </p> */}
+      <h1 className="contact-title">{t("contact.title")}</h1>
+      <p className="contact-intro">{t("contact.intro")}</p>
 
       <form className="contact-form">
         <div className="contact-form-row">
           <div className="contact-field">
             <label htmlFor="lastname" className="contact-label">
-              Nom
+              {t("contact.lastname")}
             </label>
             <input
               type="text"
               id="lastname"
               name="lastname"
-              placeholder="Votre nom"
+              placeholder={t("contact.lastnamePh")}
             />
           </div>
           <div className="contact-field">
             <label htmlFor="firstname" className="contact-label_2">
-              Prénom
+              {t("contact.firstname")}
             </label>
             <input
               type="text"
               id="firstname"
               name="firstname"
-              placeholder="Votre prénom"
+              placeholder={t("contact.firstnamePh")}
             />
           </div>
         </div>
         <div className="contact-form-row">
           <div className="contact-field">
             <label htmlFor="email" className="contact-label">
-              Email
+              {t("contact.email")}
             </label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Votre email"
+              placeholder={t("contact.emailPh")}
             />
           </div>
           <div className="contact-field">
             <label htmlFor="phone" className="contact-label_2">
-              Téléphone
+              {t("contact.phone")}
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Votre téléphone"
+              placeholder={t("contact.phonePh")}
             />
           </div>
         </div>
         <label htmlFor="subject" className="contact-subject-label">
-          Vous-etez ?
+          {t("contact.subjectLabel")}
         </label>
         <div className="contact-form-row contact-form-row--subject-social">
           <select id="subject" name="subject" required>
-            <option value="">Sélectionnez un sujet</option>
-            <option value="1">Je suis un particulier</option>
-            <option value="2">Une entreprise</option>
-            <option value="3">Je souhaite poser une question</option>
-            <option value="4">Je souhaite faire une suggestion</option>
-            <option value="5">Je souhaite signaler un problème</option>
-            <option value="6">Autre</option>
+            <option value="">{t("contact.subjectPh")}</option>
+            <option value="1">{t("contact.subject1")}</option>
+            <option value="2">{t("contact.subject2")}</option>
+            <option value="3">{t("contact.subject3")}</option>
+            <option value="4">{t("contact.subject4")}</option>
+            <option value="5">{t("contact.subject5")}</option>
+            <option value="6">{t("contact.subject6")}</option>
           </select>
           <FooterRight />
         </div>
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">{t("contact.message")}</label>
         <textarea id="message" name="message" />
-        <button type="submit">Envoyer</button>
+        <button type="submit">{t("contact.submit")}</button>
       </form>
     </article>
   );

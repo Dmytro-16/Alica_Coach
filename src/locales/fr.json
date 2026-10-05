@@ -1,0 +1,145 @@
+{
+  "locale": {
+    "selectAria": "Choisir la langue",
+    "options": { "fr": "FR", "en": "EN", "ru": "RU" }
+  },
+  "nav": {
+    "aria": "Navigation principale",
+    "home": "Accueil",
+    "about": "À propos",
+    "journey": "Mon parcours",
+    "pricing": "Tarifs",
+    "testimonials": "Témoignages",
+    "contact": "Contact"
+  },
+  "common": {
+    "contactMe": "Me contacter",
+    "backHome": "Retour à l'accueil",
+    "seePaymentPage": "Paiement",
+    "seePrivacyPage": "Politique de confidentialité"
+  },
+  "rdv": {
+    "cta": "Prendre rendez-vous",
+    "title": "Prendre rendez-vous",
+    "intro": "[À compléter — Alicia : durée, annulation, fuseau horaire.]",
+    "pickSlot": "Choisir un créneau",
+    "openNewTab": "Ouvrir le calendrier dans un nouvel onglet"
+  },
+  "temoignages": {
+    "title": "Témoignages",
+    "intro": "[À compléter — Alicia : une phrase invitant à lire ou partager une expérience.]",
+    "shareCta": "Partagez votre expérience"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "intro": "[À compléter — Alicia : délai de réponse, créneaux, langues si tu le souhaites.]",
+    "lastname": "Nom",
+    "firstname": "Prénom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "lastnamePh": "Votre nom",
+    "firstnamePh": "Votre prénom",
+    "emailPh": "Votre email",
+    "phonePh": "Votre téléphone",
+    "subjectLabel": "Vous-etez ?",
+    "subjectPh": "Sélectionnez un sujet",
+    "subject1": "Je suis un particulier",
+    "subject2": "Une entreprise",
+    "subject3": "Je souhaite poser une question",
+    "subject4": "Je souhaite faire une suggestion",
+    "subject5": "Je souhaite signaler un problème",
+    "subject6": "Autre",
+    "message": "Message",
+    "submit": "Envoyer"
+  },
+  "pages": {
+    "accueil": {
+      "title": "Bienvenue",
+      "lead": "[À compléter — Alicia : une phrase sur qui tu es et ce que tu proposes.]",
+      "approachTitle": "Mon approche",
+      "approachText": "[À compléter — Alicia : 2–3 phrases — corps, esprit, équilibre, confiance.]",
+      "servicesTitle": "Accompagnements",
+      "servicesText": "[À compléter — Alicia : life coaching, coaching sportif, yoga — en bref.]"
+    },
+    "about": {
+      "title": "À propos",
+      "whoTitle": "Qui suis-je ?",
+      "whoText": "[À compléter — Alicia : parcours, formation, ce qui t'anime.]",
+      "methodTitle": "Ma façon de travailler",
+      "methodText": "[À compléter — Alicia : déroulé d'une séance, durée, présentiel ou visio si applicable.]",
+      "forWhoTitle": "Pour qui ?",
+      "forWhoText": "[À compléter — Alicia : public visé, sans promesses médicales.]"
+    },
+    "journey": {
+      "title": "Mon parcours",
+      "trainingTitle": "Formations & certifications",
+      "trainingText": "[À compléter — Alicia : diplômes, dates, organismes.]",
+      "experienceTitle": "Expérience",
+      "experienceText": "[À compléter — Alicia : étapes clés.]",
+      "todayTitle": "Aujourd'hui",
+      "todayText": "[À compléter — Alicia : ce que tu fais concrètement aujourd'hui.]"
+    },
+    "pricing": {
+      "title": "Tarifs",
+      "intro": "[À compléter — Alicia : comment se déroule la réservation / le premier échange.]",
+      "offer1Title": "[Nom offre 1 — ex. Séance individuelle]",
+      "offer1Text": "[Durée] · [Prix ou « sur devis »] · [Ce qui est inclus — Alicia]",
+      "offer2Title": "[Nom offre 2]",
+      "offer2Text": "[À compléter — Alicia]",
+      "offer3Title": "[Nom offre 3 — ex. Pack / entreprise]",
+      "offer3Text": "[À compléter — Alicia]",
+      "disclaimer": "Les tarifs et conditions définitives seront confirmés avant toute prestation."
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "Comment réserver un rendez-vous ?",
+      "a1": "[À compléter — Alicia : via la page RDV / Calendly.]",
+      "q2": "Les séances se font en presentiel ou en visio ?",
+      "a2": "[À compléter — Alicia]",
+      "q3": "Quels moyens de paiement acceptez-vous ?",
+      "a3Prefix": "[À compléter — Alicia.] Voir aussi la page",
+      "q4": "Comment sont utilisées mes données ?",
+      "a4Prefix": "Voir la",
+      "q5": "[Question métier — Alicia]",
+      "a5": "[Réponse — Alicia]"
+    },
+    "legalNotice": {
+      "title": "Mentions légales",
+      "editorTitle": "Éditeur du site",
+      "editorText": "Alicia Semenchuk — [Statut juridique — Alicia] — [Adresse — Alicia] — [SIRET / RNA si applicable — Alicia] — Contact :",
+      "directorTitle": "Directeur de la publication",
+      "directorText": "Alicia Semenchuk",
+      "hostTitle": "Hébergeur",
+      "hostText": "[Nom hébergeur — à compléter au déploiement] — [Adresse] — [Site]",
+      "ipTitle": "Propriété intellectuelle",
+      "ipText": "Les contenus de ce site (textes, images, logo) sont protégés. Toute reproduction sans autorisation est interdite.",
+      "creditsTitle": "Crédits",
+      "creditsText": "[Photos / design — Alicia]"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "controllerTitle": "Responsable du traitement",
+      "controllerText": "Alicia Semenchuk —",
+      "dataTitle": "Données collectées",
+      "dataText": "Formulaire contact (nom, prénom, email, téléphone, message) ; prise de rendez-vous (Calendly) ; formulaire témoignages (Tally) ; [cookies — à compléter quand le bandeau sera en place].",
+      "purposeTitle": "Finalités",
+      "purposeText": "Répondre aux demandes ; gestion des rendez-vous ; publication de témoignages avec consentement.",
+      "legalTitle": "Base légale / durée de conservation",
+      "legalText": "[À valider avec Alicia / conseil si besoin.]",
+      "rightsTitle": "Vos droits (RGPD)",
+      "rightsText": "Accès, rectification, suppression, opposition —",
+      "processorsTitle": "Sous-traitants",
+      "processorsText": "Calendly, Tally, [hébergeur], [Stripe — si paiement en ligne plus tard]."
+    },
+    "payment": {
+      "title": "Paiement",
+      "p1": "[À compléter — Alicia : modalités avant/après séance, facturation.]",
+      "p2": "Le paiement en ligne sera disponible prochainement via un lien sécurisé.",
+      "p3Prefix": "Pour toute question :"
+    },
+    "notFound": {
+      "title": "Page introuvable",
+      "text": "Cette page n'existe pas ou a été déplacée."
+    }
+  }
+}

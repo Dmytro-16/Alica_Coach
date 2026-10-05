@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+.temoignages-intro {
+  text-align: center;
+  margin: 0 0 1.25rem;
+  color: var(--body-color, #756e64);
+}
+
 .temoignages-page {
   max-width: 56rem;
 }

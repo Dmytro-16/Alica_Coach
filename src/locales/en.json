@@ -1,0 +1,145 @@
+{
+  "locale": {
+    "selectAria": "Choose language",
+    "options": { "fr": "FR", "en": "EN", "ru": "RU" }
+  },
+  "nav": {
+    "aria": "Main navigation",
+    "home": "Home",
+    "about": "About",
+    "journey": "My journey",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "common": {
+    "contactMe": "Contact me",
+    "backHome": "Back to home",
+    "seePaymentPage": "Payment",
+    "seePrivacyPage": "Privacy policy"
+  },
+  "rdv": {
+    "cta": "Book an appointment",
+    "title": "Book an appointment",
+    "intro": "[To complete — Alicia: duration, cancellation, time zone.]",
+    "pickSlot": "Choose a time slot",
+    "openNewTab": "Open calendar in a new tab"
+  },
+  "temoignages": {
+    "title": "Testimonials",
+    "intro": "[To complete — Alicia: a line inviting readers to browse or share an experience.]",
+    "shareCta": "Share your experience"
+  },
+  "contact": {
+    "title": "Contact me",
+    "intro": "[To complete — Alicia: response time, availability, languages if you wish.]",
+    "lastname": "Last name",
+    "firstname": "First name",
+    "email": "Email",
+    "phone": "Phone",
+    "lastnamePh": "Your last name",
+    "firstnamePh": "Your first name",
+    "emailPh": "Your email",
+    "phonePh": "Your phone number",
+    "subjectLabel": "You are?",
+    "subjectPh": "Select a topic",
+    "subject1": "I am an individual",
+    "subject2": "A company",
+    "subject3": "I have a question",
+    "subject4": "I have a suggestion",
+    "subject5": "I want to report an issue",
+    "subject6": "Other",
+    "message": "Message",
+    "submit": "Send"
+  },
+  "pages": {
+    "accueil": {
+      "title": "Welcome",
+      "lead": "[To complete — Alicia: a line about who you are and what you offer.]",
+      "approachTitle": "My approach",
+      "approachText": "[To complete — Alicia: 2–3 sentences — body, mind, balance, confidence.]",
+      "servicesTitle": "Coaching services",
+      "servicesText": "[To complete — Alicia: life coaching, sports coaching, yoga — briefly.]"
+    },
+    "about": {
+      "title": "About",
+      "whoTitle": "Who am I?",
+      "whoText": "[To complete — Alicia: background, training, what drives you.]",
+      "methodTitle": "How I work",
+      "methodText": "[To complete — Alicia: session flow, duration, in person or online.]",
+      "forWhoTitle": "Who is it for?",
+      "forWhoText": "[To complete — Alicia: target audience, no medical claims.]"
+    },
+    "journey": {
+      "title": "My journey",
+      "trainingTitle": "Training & certifications",
+      "trainingText": "[To complete — Alicia: degrees, dates, institutions.]",
+      "experienceTitle": "Experience",
+      "experienceText": "[To complete — Alicia: key milestones.]",
+      "todayTitle": "Today",
+      "todayText": "[To complete — Alicia: what you do today.]"
+    },
+    "pricing": {
+      "title": "Pricing",
+      "intro": "[To complete — Alicia: how booking / first contact works.]",
+      "offer1Title": "[Offer 1 — e.g. Individual session]",
+      "offer1Text": "[Duration] · [Price or quote on request] · [What's included — Alicia]",
+      "offer2Title": "[Offer 2]",
+      "offer2Text": "[To complete — Alicia]",
+      "offer3Title": "[Offer 3 — e.g. Pack / corporate]",
+      "offer3Text": "[To complete — Alicia]",
+      "disclaimer": "Final rates and terms will be confirmed before any service."
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "How do I book an appointment?",
+      "a1": "[To complete — Alicia: via the booking page / Calendly.]",
+      "q2": "Are sessions in person or online?",
+      "a2": "[To complete — Alicia]",
+      "q3": "What payment methods do you accept?",
+      "a3Prefix": "[To complete — Alicia.] See also the",
+      "q4": "How is my data used?",
+      "a4Prefix": "See the",
+      "q5": "[Business question — Alicia]",
+      "a5": "[Answer — Alicia]"
+    },
+    "legalNotice": {
+      "title": "Legal notice",
+      "editorTitle": "Site publisher",
+      "editorText": "Alicia Semenchuk — [Legal status — Alicia] — [Address — Alicia] — [Company ID if applicable — Alicia] — Contact:",
+      "directorTitle": "Publication director",
+      "directorText": "Alicia Semenchuk",
+      "hostTitle": "Hosting provider",
+      "hostText": "[Host name — to complete at deployment] — [Address] — [Website]",
+      "ipTitle": "Intellectual property",
+      "ipText": "Site content (text, images, logo) is protected. Reproduction without permission is prohibited.",
+      "creditsTitle": "Credits",
+      "creditsText": "[Photos / design — Alicia]"
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "controllerTitle": "Data controller",
+      "controllerText": "Alicia Semenchuk —",
+      "dataTitle": "Data collected",
+      "dataText": "Contact form (name, email, phone, message); booking (Calendly); testimonials form (Tally); [cookies — when banner is in place].",
+      "purposeTitle": "Purposes",
+      "purposeText": "Respond to requests; manage appointments; publish testimonials with consent.",
+      "legalTitle": "Legal basis / retention",
+      "legalText": "[To validate with Alicia / advisor if needed.]",
+      "rightsTitle": "Your rights (GDPR)",
+      "rightsText": "Access, rectification, erasure, objection —",
+      "processorsTitle": "Processors",
+      "processorsText": "Calendly, Tally, [host], [Stripe — if online payment later]."
+    },
+    "payment": {
+      "title": "Payment",
+      "p1": "[To complete — Alicia: terms before/after sessions, invoicing.]",
+      "p2": "Online payment will be available soon via a secure link.",
+      "p3Prefix": "Questions:"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "This page does not exist or has been moved."
+    }
+  }
+}

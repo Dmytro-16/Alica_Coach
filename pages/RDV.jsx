@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "../src/styles/rdv.css";
 
 const rawCalendlyUrl = import.meta.env.VITE_CALENDLY_URL?.trim() ?? "";
@@ -56,6 +57,7 @@ function loadCalendlyAssets() {
 }
 
 export default function RDV() {
+  const { t } = useTranslation();
   const [ready, setReady] = useState(Boolean(window.Calendly));
 
   useEffect(() => {
@@ -73,7 +75,8 @@ export default function RDV() {
   return (
     <article className="legal-page rdv-page">
       <div className="rdv-card">
-        <h1 className="rdv-title">Prendre rendez-vous</h1>
+        <h1 className="rdv-title">{t("rdv.title")}</h1>
+        <p className="rdv-intro">{t("rdv.intro")}</p>
         {calendlyUrl ? (
           <>
             <button
@@ -82,7 +85,7 @@ export default function RDV() {
               disabled={!ready}
               onClick={openCalendly}
             >
-              <span className="btn-rdv-link">Choisir un créneau</span>
+              <span className="btn-rdv-link">{t("rdv.pickSlot")}</span>
             </button>
             <a
               className="rdv-fallback-link"
@@ -90,7 +93,7 @@ export default function RDV() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Ouvrir le calendrier dans un nouvel onglet
+              {t("rdv.openNewTab")}
             </a>
           </>
         ) : null}

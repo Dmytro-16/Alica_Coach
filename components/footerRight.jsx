@@ -5,6 +5,7 @@ export default function FooterRight() {
     <div className="footer-right">
       <div className="footer-social">
         <ButtonRDV compact />
+
         <span className="footer-separator" aria-hidden="true" />
         <a
           className="footer-social-link"
@@ -30,7 +31,7 @@ export default function FooterRight() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-brands fa-substack"></i>
+          <i className="fa-brands fa-substack"></i>
         </a>
       </div>
       <div className="footer-text-container">
