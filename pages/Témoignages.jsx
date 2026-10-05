@@ -12,7 +12,7 @@ export default function Témoignages() {
         {temoignages.map((item) => (
           <li key={item.id} className="temoignage-card">
             <TemoignageStars count={item.stars} />
-            <blockquote className="temoignage-text">{item.text}</blockquote>
+            <blockquote className="temoignage-text">"{item.text}"</blockquote>
             <p className="temoignage-author">— {item.author}</p>
           </li>
         ))}

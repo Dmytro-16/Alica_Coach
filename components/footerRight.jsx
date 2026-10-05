@@ -23,6 +23,15 @@ export default function FooterRight() {
         >
           <i className="fa-brands fa-tiktok"></i>
         </a>
+        <span className="footer-separator" aria-hidden="true" />
+        <a
+          className="footer-social-link"
+          href="https://substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-substack"></i>
+        </a>
       </div>
       <div className="footer-text-container">
         <p className="footer-text">Corps</p>
