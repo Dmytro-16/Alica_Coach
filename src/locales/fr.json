@@ -5,6 +5,8 @@
   },
   "nav": {
     "aria": "Navigation principale",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu",
     "home": "Accueil",
     "about": "À propos",
     "journey": "Mon parcours",
@@ -18,8 +20,20 @@
     "seePaymentPage": "Paiement",
     "seePrivacyPage": "Politique de confidentialité"
   },
+  "footer": {
+    "copyright": "© 2026 Alicia Semenchuk",
+    "legalNotice": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "faq": "FAQ",
+    "payment": "Paiement",
+    "pillarBody": "Corps",
+    "pillarMind": "Esprit",
+    "pillarBalance": "Equilibre",
+    "pillarConfidence": "Confiance"
+  },
   "rdv": {
     "cta": "Prendre rendez-vous",
+    "ctaShort": "RDV",
     "title": "Prendre rendez-vous",
     "intro": "[À compléter — Alicia : durée, annulation, fuseau horaire.]",
     "pickSlot": "Choisir un créneau",

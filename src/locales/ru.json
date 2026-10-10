@@ -5,6 +5,8 @@
   },
   "nav": {
     "aria": "Главная навигация",
+    "menuOpen": "Открыть меню",
+    "menuClose": "Закрыть меню",
     "home": "Главная",
     "about": "Обо мне",
     "journey": "Мой путь",
@@ -18,8 +20,20 @@
     "seePaymentPage": "Оплата",
     "seePrivacyPage": "Политика конфиденциальности"
   },
+  "footer": {
+    "copyright": "© 2026 Alicia Semenchuk",
+    "legalNotice": "Правовая информация",
+    "privacy": "Политика конфиденциальности",
+    "faq": "FAQ",
+    "payment": "Оплата",
+    "pillarBody": "Тело",
+    "pillarMind": "Дух",
+    "pillarBalance": "Баланс",
+    "pillarConfidence": "Уверенность"
+  },
   "rdv": {
     "cta": "Записаться на консультацию",
+    "ctaShort": "Запись",
     "title": "Записаться на консультацию",
     "intro": "[Дополнить — Alicia: длительность, отмена, часовой пояс.]",
     "pickSlot": "Выбрать время",

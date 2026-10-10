@@ -5,7 +5,9 @@ export default function SiGnature() {
     <div className="signature-container">
       <h1>
         <Link to="/" className="signature-link">
-          Alicia Semenchuk
+          Alicia
+          <br className="signature-name-break" aria-hidden="true" />
+          Semenchuk
         </Link>
       </h1>
 

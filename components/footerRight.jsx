@@ -1,6 +1,17 @@
+import { Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import ButtonRDV from "./buttonRdv";
 
+const PILLARS = [
+  "footer.pillarBody",
+  "footer.pillarMind",
+  "footer.pillarBalance",
+  "footer.pillarConfidence",
+];
+
 export default function FooterRight() {
+  const { t } = useTranslation();
+
   return (
     <div className="footer-right">
       <div className="footer-social">
@@ -35,13 +46,14 @@ export default function FooterRight() {
         </a>
       </div>
       <div className="footer-text-container">
-        <p className="footer-text">Corps</p>
-        <span className="footer-separator" aria-hidden="true" />
-        <p className="footer-text">Esprit</p>
-        <span className="footer-separator" aria-hidden="true" />
-        <p className="footer-text">Equilibre</p>
-        <span className="footer-separator" aria-hidden="true" />
-        <p className="footer-text">Confiance</p>
+        {PILLARS.map((key, index) => (
+          <Fragment key={key}>
+            {index > 0 ? (
+              <span className="footer-separator" aria-hidden="true" />
+            ) : null}
+            <p className="footer-text">{t(key)}</p>
+          </Fragment>
+        ))}
       </div>
     </div>
   );

@@ -5,6 +5,8 @@
   },
   "nav": {
     "aria": "Main navigation",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
     "home": "Home",
     "about": "About",
     "journey": "My journey",
@@ -18,8 +20,20 @@
     "seePaymentPage": "Payment",
     "seePrivacyPage": "Privacy policy"
   },
+  "footer": {
+    "copyright": "© 2026 Alicia Semenchuk",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy policy",
+    "faq": "FAQ",
+    "payment": "Payment",
+    "pillarBody": "Body",
+    "pillarMind": "Mind",
+    "pillarBalance": "Balance",
+    "pillarConfidence": "Confidence"
+  },
   "rdv": {
     "cta": "Book an appointment",
+    "ctaShort": "Book",
     "title": "Book an appointment",
     "intro": "[To complete — Alicia: duration, cancellation, time zone.]",
     "pickSlot": "Choose a time slot",

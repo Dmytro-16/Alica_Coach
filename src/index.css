@@ -19,6 +19,12 @@ body {
   background-color: var(--color-fond, #f8f5ef);
 }
 
+/* Breakpoints responsive (utilisés dans @media en bas de fichier) */
+:root {
+  --bp-tablet: 900px;
+  --bp-mobile: 600px;
+}
+
 .app-layout {
   display: flex;
   flex-direction: column;
@@ -66,13 +72,75 @@ a {
   align-items: center;
 }
 
+.nav-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.65rem;
+}
+
 .nav-lang,
 .nav-rdv {
   flex-shrink: 0;
 }
 
+.nav-toggle {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgb(36 35 33 / 0.12);
+  border-radius: 8px;
+  background-color: var(--color-fond, #f8f5ef);
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 1.1rem;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--color-principal, #242321);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.nav-container--open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-container--open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-container--open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .nav-rdv .btn-rdv {
   margin: 0;
+}
+
+.nav-rdv-mobile {
+  display: none;
 }
 
 /* Pas de ligne sous le lien (style nav) sur le bouton RDV */
@@ -191,6 +259,29 @@ a {
   /* border: solid 2px var(--color-accent, #050505); */
 }
 
+/* Saut de ligne prénom / nom — actif seulement en nav mobile (voir @media) */
+.signature-name-break {
+  display: none;
+}
+
+/* Prénom + lignes COACH — taille navbar (desktop / tablette) */
+.nav-container > .signature-container h1 {
+  max-width: 100%;
+}
+
+.nav-container > .signature-container .signature-link {
+  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
+  line-height: 1.08;
+  white-space: normal;
+  text-align: left;
+  overflow-wrap: normal;
+}
+
+.nav-container > .signature-container .signature-text p {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
 .signature-text {
   display: flex;
   flex-direction: row;
@@ -289,6 +380,7 @@ a {
   font-size: var(--footer-signature-name-size);
   line-height: 1;
   justify-content: flex-start;
+  white-space: nowrap;
 }
 
 .footer-container .signature-text {
@@ -415,35 +507,6 @@ a {
   display: block;
 }
 
-@media (max-width: 900px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-container .signature-container,
-  .footer-container .signature-text {
-    align-items: center;
-  }
-
-  .footer-container .signature-text,
-  .footer-container .signature-link {
-    justify-content: center;
-  }
-
-  .footer-left,
-  .footer-right {
-    align-items: center;
-    width: 100%;
-  }
-
-  .footer-social,
-  .footer-text-container {
-    justify-content: center;
-  }
-}
-
 .footer-dot {
   color: var(--color-accent-clair, #d5bd91);
 }
@@ -465,4 +528,241 @@ a {
 .legal-page h2 {
   margin: 1.75rem 0 0.65rem;
   font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+/* — RESPONSIVE — (nav, footer, pages) ------------------------------------ */
+
+/* 900px ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  /* Nav — grille : Alicia à gauche | FR + RDV + menu à droite */
+  .nav-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand actions"
+      "menu menu";
+    align-items: center;
+    column-gap: 0.5rem;
+    padding: 0.45rem 0.7rem;
+    min-height: 0;
+  }
+
+  .nav-container > .signature-container {
+    grid-area: brand;
+    min-width: 0;
+    padding: 0.6rem 0.9rem;
+    gap: 0.35rem;
+    align-items: flex-start;
+    align-self: center;
+    overflow: visible;
+    /* border: solid 2px var(--color-accent, #050505); */
+  }
+
+  /* 3 lignes COACH masquées en nav mobile (siGnature.jsx inchangé) */
+  .nav-container > .signature-container .signature-text {
+    display: none;
+  }
+
+  .nav-container > .signature-container .signature-name-break {
+    display: block;
+  }
+
+  .nav-container > .signature-container .signature-link {
+    display: block;
+    width: max-content;
+    font-size: 2rem;
+    line-height: 1.05;
+    text-align: left;
+  }
+
+  .nav-actions {
+    /* ~44px — cible tactile recommandée (accessibilité) */
+    --nav-action-size: 2.75rem;
+    --nav-action-gap: 0.55rem;
+
+    grid-area: actions;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--nav-action-gap);
+  }
+
+  .nav-actions .nav-rdv,
+  .nav-lang,
+  .nav-rdv-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-lang .locale-dropdown-select {
+    box-sizing: border-box;
+    height: var(--nav-action-size);
+    min-width: var(--nav-action-size);
+    padding: 0 0.5rem;
+    border: 1px solid rgb(36 35 33 / 0.28);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-principal, #242321);
+  }
+
+  .nav-rdv-desktop {
+    display: none;
+  }
+
+  .nav-rdv-mobile {
+    display: flex;
+  }
+
+  .nav-rdv-mobile .btn-rdv {
+    height: var(--nav-action-size);
+    border-radius: 8px;
+    background-color: #9a7340;
+  }
+
+  .nav-rdv-mobile .btn-rdv-link {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--nav-action-size);
+    min-width: var(--nav-action-size);
+    padding: 0 0.6rem;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+  }
+
+  .nav-rdv-mobile .btn-rdv-link:hover,
+  .nav-rdv-mobile .btn-rdv:hover .btn-rdv-link {
+    transform: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-shrink: 0;
+    width: var(--nav-action-size);
+    height: var(--nav-action-size);
+    border: 1px solid rgb(36 35 33 / 0.28);
+    border-radius: 8px;
+  }
+
+  .nav-toggle-bar {
+    width: 1.25rem;
+    height: 2px;
+  }
+
+  .nav-container--open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-container--open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-lang .locale-dropdown-select:focus-visible,
+  .nav-toggle:focus-visible,
+  .nav-rdv-mobile .btn-rdv-link:focus-visible {
+    outline: 2px solid var(--color-principal, #242321);
+    outline-offset: 2px;
+  }
+
+  .nav-list {
+    grid-area: menu;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgb(36 35 33 / 0.1);
+  }
+
+  .nav-container--open .nav-list {
+    display: flex;
+    padding: 0.35rem 0 0.65rem;
+  }
+
+  .nav-list > li {
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.5rem;
+  }
+
+  .nav-list li a {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* Footer — plus léger : pas de signature ni piliers en double */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.85rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .footer-left,
+  .footer-text-container {
+    display: none;
+  }
+
+  .footer-legal {
+    flex: 1 1 auto;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .footer-right {
+    width: 100%;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .footer-legal-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 0.75rem;
+    justify-items: center;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .footer-legal-links .footer-dot {
+    display: none;
+  }
+
+  .footer-social {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .legal-page {
+    padding: 1.5rem 1rem 3rem;
+  }
+}
+
+/* 600px ------------------------------------------------------------ */
+@media (max-width: 600px) {
+  .nav-list li a {
+    font-size: 12px;
+  }
+
+  .footer-container {
+    --footer-font-size: 10px;
+    --footer-social-icon-size: 16px;
+    padding: 0.85rem 0.65rem 1rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.95em;
+  }
+
+  .legal-page {
+    padding: 1rem 0.75rem 2rem;
+  }
 }
