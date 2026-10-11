@@ -28,6 +28,9 @@ coverage
 INSTRUCTION.md
 todo-liste.md
 
+# Dossier examen / diplôme développeur (projet Alicia Coach — local uniquement)
+examen-diplome/
+
 # Éditeurs & OS
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,293 @@
+/* Accueil */
+
+.home-page {
+  width: 100%;
+}
+
+.home-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(88vh, 44rem);
+  overflow: hidden;
+  color: var(--color-principal, #242321);
+  background-color: var(--color-fond, #f8f5ef);
+  border-bottom: 1px solid rgb(36 35 33 / 0.06);
+}
+
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    102deg,
+    rgb(248 245 239 / 0.94) 0%,
+    rgb(248 245 239 / 0.82) 38%,
+    rgb(248 245 239 / 0.45) 58%,
+    rgb(248 245 239 / 0.12) 100%
+  );
+}
+
+.home-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 3.25rem;
+}
+
+.home-hero-copy {
+  max-width: 36rem;
+}
+
+.home-hero-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(2.625rem, 5.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  white-space: pre-line;
+}
+
+.home-hero-line {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-signature, "Brittany Signature", cursive);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.1;
+}
+
+.home-hero-subtitle {
+  margin: 0 0 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--body-color, #756e64);
+  max-width: 36rem;
+}
+
+.home-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 30px;
+  background-color: var(--color-boutons, #b89558);
+  color: var(--color-fond, #f8f5ef);
+  font-size: var(--nav-font-size, 12px);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.home-hero-cta:hover {
+  background-color: var(--color-accent-clair, #d5bd91);
+  color: var(--color-principal, #242321);
+}
+
+.home-hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--body-color, #756e64);
+}
+
+.home-hero-pillars li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.home-hero-pillars i {
+  font-size: 0.85rem;
+  color: var(--color-boutons, #b89558);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-hero {
+    min-height: min(78vh, 36rem);
+  }
+
+  .home-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgb(248 245 239 / 0.9) 0%,
+      rgb(248 245 239 / 0.75) 45%,
+      rgb(248 245 239 / 0.35) 100%
+    );
+  }
+
+  .home-hero-inner {
+    padding: 1.75rem 1rem 2rem;
+  }
+
+  .home-hero-title {
+    max-width: none;
+  }
+}
+
+/* À propos (accueil) */
+
+.home-about {
+  background-color: var(--color-fond, #f8f5ef);
+  color: var(--color-principal, #242321);
+}
+
+.home-about-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+}
+
+.home-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.12fr) minmax(0, 0.82fr);
+  gap: 2rem 2rem;
+  align-items: center;
+}
+
+.home-about-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-about-title {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+
+.home-about-text {
+  margin: 0 0 1.1rem;
+  max-width: 38rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.home-about-text:last-of-type {
+  margin-bottom: 1.75rem;
+}
+
+.home-about-cta {
+  margin-top: 0.25rem;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-boutons, #b89558) 0%,
+    var(--color-accent-clair, #d5bd91) 100%
+  );
+}
+
+.home-about-cta:hover {
+  background-image: none;
+}
+
+.home-about-visual {
+  margin: 0;
+  width: 100%;
+  max-width: min(100%, 26rem);
+  justify-self: stretch;
+}
+
+.home-about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.35);
+  box-shadow: 0 14px 44px rgb(36 35 33 / 0.08);
+}
+
+.home-about-quote-wrap {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+.home-about-quote {
+  margin: 0;
+  max-width: 20rem;
+  text-align: center;
+  /* Inclinaison type maquette (ajuster l’angle : -4deg à -10deg) */
+  transform: rotate(-7deg);
+  transform-origin: center center;
+}
+
+.home-about-quote p {
+  margin: 0;
+  font-family: var(--font-signature, "Brittany Signature", cursive);
+  font-size: clamp(1.65rem, 3.2vw, 30px);
+  line-height: 1.35;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-about-quote-wrap::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  margin: 1.25rem auto 0;
+  background-color: var(--color-boutons, #b89558);
+  opacity: 0.65;
+}
+
+@media (max-width: 900px) {
+  .home-about-inner {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .home-about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home-about-visual {
+    order: -1;
+    max-width: none;
+  }
+
+  .home-about-title {
+    max-width: none;
+  }
+
+  .home-about-quote-wrap {
+    padding-top: 0.5rem;
+  }
+
+  .home-about-quote {
+    transform: rotate(-6deg);
+  }
+}
