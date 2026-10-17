@@ -1,0 +1,97 @@
+/* Page Accompagnements (/accomplishments) */
+
+.accomplishments-page {
+  max-width: 56rem;
+}
+
+.accomplishments-intro {
+  margin: 0 0 2rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.accomplishments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.accomplishments-item {
+  display: grid;
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: start;
+}
+
+.accomplishments-item-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.35);
+  box-shadow: 0 8px 24px rgb(36 35 33 / 0.06);
+}
+
+.accomplishments-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accomplishments-item-icon {
+  font-size: 1.1rem;
+  color: var(--color-boutons, #b89558);
+}
+
+.accomplishments-item-title {
+  margin: 0;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-principal, #242321);
+}
+
+.accomplishments-item-lead {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--body-color, #756e64);
+}
+
+.accomplishments-item-detail {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.accomplishments-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0;
+}
+
+.accomplishments-actions a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-boutons, #b89558);
+}
+
+.accomplishments-actions a:hover {
+  color: var(--color-principal, #242321);
+}
+
+@media (max-width: 700px) {
+  .accomplishments-item {
+    grid-template-columns: 1fr;
+  }
+}

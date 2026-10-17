@@ -16,6 +16,13 @@ export default function Footer() {
         <ContactSnippet />
         <p className="footer-copyright">{t("footer.copyright")}</p>
         <p className="footer-legal-links">
+          <Link to="/temoignages" className="footer-link">
+            {t("footer.testimonials")}
+          </Link>
+          <span className="footer-dot" aria-hidden="true">
+            {" "}
+            ·{" "}
+          </span>
           <Link to="/mentions-legales" className="footer-link">
             {t("footer.legalNotice")}
           </Link>

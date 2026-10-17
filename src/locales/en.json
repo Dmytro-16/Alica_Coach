@@ -10,6 +10,7 @@
     "home": "Home",
     "about": "About",
     "journey": "My journey",
+    "accomplishments": "Coaching",
     "pricing": "Pricing",
     "testimonials": "Testimonials",
     "contact": "Contact"
@@ -24,6 +25,7 @@
     "copyright": "© 2026 Alicia Semenchuk",
     "legalNotice": "Legal notice",
     "privacy": "Privacy policy",
+    "testimonials": "Testimonials",
     "faq": "FAQ",
     "payment": "Payment",
     "pillarBody": "Body",
@@ -70,9 +72,16 @@
     "accueil": {
       "title": "Welcome",
       "lead": "[To complete — Alicia: a line about who you are and what you offer.]",
-      "approachTitle": "My approach",
-      "approachText": "[To complete — Alicia: 2–3 sentences — body, mind, balance, confidence.]",
+      "approachEyebrow": "My method",
+      "approachTitle": "Body, mind, balance, confidence",
+      "approachText": "[To complete — Alicia: 2–3 sentences — how you coach.]",
+      "approachLink": "How I work",
+      "testimonialsEyebrow": "Testimonials",
+      "testimonialsTeaser": "[To complete — Alicia: a line about client trust.]",
+      "testimonialsLink": "See all testimonials",
       "servicesTitle": "Coaching services",
+      "servicesEyebrow": "Coaching",
+      "servicesHeadline": "Sports, yoga and life coaching",
       "servicesText": "[To complete — Alicia: life coaching, sports coaching, yoga — briefly.]",
       "heroTitle": "Reveal your energy,\nyour body and\nyour confidence.",
       "heroLine": "[To complete — Alicia: first name or short catchphrase.]",
@@ -88,7 +97,17 @@
       "aboutSectionParagraph2": "Today I put that unique experience at the service of your well-being, supporting you with kindness and energy through your own transformation.",
       "aboutSectionQuote": "Movement is a source of life, for both body and mind.",
       "aboutSectionLink": "Learn more",
-      "aboutImageAlt": "Alicia Semenchuk, sports, yoga and life coach."
+      "aboutImageAlt": "Alicia Semenchuk, sports, yoga and life coach.",
+      "servicesLink": "See all coaching services",
+      "service1Title": "Sports coaching",
+      "service1Text": "[To complete — Alicia.]",
+      "service1ImageAlt": "Placeholder — sports coaching.",
+      "service2Title": "Yoga coaching",
+      "service2Text": "[To complete — Alicia.]",
+      "service2ImageAlt": "Placeholder — yoga coaching.",
+      "service3Title": "Life coaching",
+      "service3Text": "[To complete — Alicia.]",
+      "service3ImageAlt": "Placeholder — life coaching."
     },
     "about": {
       "title": "About",
@@ -97,7 +116,17 @@
       "methodTitle": "How I work",
       "methodText": "[To complete — Alicia: session flow, duration, in person or online.]",
       "forWhoTitle": "Who is it for?",
-      "forWhoText": "[To complete — Alicia: target audience, no medical claims.]"
+      "forWhoText": "[To complete — Alicia: target audience, no medical claims.]",
+      "journeyLink": "Discover my journey"
+    },
+    "accomplishments": {
+      "title": "Coaching services",
+      "intro": "[To complete — Alicia: intro — sports, yoga, life coaching.]",
+      "service1Detail": "[To complete — Alicia: sports coaching — who, goals, session format.]",
+      "service2Detail": "[To complete — Alicia: yoga — style, level, benefits.]",
+      "service3Detail": "[To complete — Alicia: life coaching — topics, duration, framework.]",
+      "seePricing": "See pricing",
+      "seeRdv": "Book an appointment"
     },
     "journey": {
       "title": "My journey",

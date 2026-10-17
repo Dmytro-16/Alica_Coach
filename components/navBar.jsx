@@ -8,9 +8,8 @@ import LocaleButton from "../components/LocaleButton";
 const links = [
   { to: "/", labelKey: "nav.home" },
   { to: "/a-propos", labelKey: "nav.about" },
-  { to: "/accomplishments", labelKey: "nav.journey" },
+  { to: "/accomplishments", labelKey: "nav.accomplishments" },
   { to: "/tarifs", labelKey: "nav.pricing" },
-  { to: "/temoignages", labelKey: "nav.testimonials" },
   { to: "/contact", labelKey: "nav.contact" },
 ];
 

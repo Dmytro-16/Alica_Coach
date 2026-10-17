@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Accueil from "../pages/Accueil";
 import Apropos from "../pages/A propos";
 import Accomp from "../pages/Accomp";
+import MonParcours from "../pages/Mon parcours";
 import Contact from "../pages/Contact";
 import Tarifs from "../pages/Tarifs";
 import RDV from "../pages/RDV";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Accueil />} />
           <Route path="/a-propos" element={<Apropos />} />
           <Route path="/accomplishments" element={<Accomp />} />
+          <Route path="/mon-parcours" element={<MonParcours />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tarifs" element={<Tarifs />} />
           <Route path="/rdv" element={<RDV />} />

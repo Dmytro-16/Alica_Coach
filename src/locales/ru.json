@@ -10,6 +10,7 @@
     "home": "Главная",
     "about": "Обо мне",
     "journey": "Мой путь",
+    "accomplishments": "Сопровождение",
     "pricing": "Цены",
     "testimonials": "Отзывы",
     "contact": "Контакты"
@@ -24,6 +25,7 @@
     "copyright": "© 2026 Alicia Semenchuk",
     "legalNotice": "Правовая информация",
     "privacy": "Политика конфиденциальности",
+    "testimonials": "Отзывы",
     "faq": "FAQ",
     "payment": "Оплата",
     "pillarBody": "Тело",
@@ -70,9 +72,16 @@
     "accueil": {
       "title": "Добро пожаловать",
       "lead": "[Дополнить — Alicia: кто вы и что предлагаете.]",
-      "approachTitle": "Мой подход",
-      "approachText": "[Дополнить — Alicia: 2–3 предложения — тело, дух, баланс, уверенность.]",
+      "approachEyebrow": "Мой метод",
+      "approachTitle": "Тело, дух, баланс, уверенность",
+      "approachText": "[Дополнить — Alicia: 2–3 предложения — как вы сопровождаете.]",
+      "approachLink": "Как я работаю",
+      "testimonialsEyebrow": "Отзывы",
+      "testimonialsTeaser": "[Дополнить — Alicia: фраза о доверии клиентов.]",
+      "testimonialsLink": "Все отзывы",
       "servicesTitle": "Сопровождение",
+      "servicesEyebrow": "Сопровождение",
+      "servicesHeadline": "Спорт, yoga и life coaching",
       "servicesText": "[Дополнить — Alicia: life coaching, спорт, yoga — кратко.]",
       "heroTitle": "Раскройте свою энергию,\nтело и\nуверенность.",
       "heroLine": "[Дополнить — Alicia: имя или короткая фраза.]",
@@ -88,7 +97,17 @@
       "aboutSectionParagraph2": "Сегодня я направляю этот уникальный опыт на ваше благополучие — с добротой и энергией сопровождаю ваше собственное преображение.",
       "aboutSectionQuote": "Движение — источник жизни и для тела, и для духа.",
       "aboutSectionLink": "Подробнее",
-      "aboutImageAlt": "Alicia Semenchuk, тренер по спорту, йоге и жизни."
+      "aboutImageAlt": "Alicia Semenchuk, тренер по спорту, йоге и жизни.",
+      "servicesLink": "Все виды сопровождения",
+      "service1Title": "Спортивный коучинг",
+      "service1Text": "[Дополнить — Alicia.]",
+      "service1ImageAlt": "Временное фото — спорт.",
+      "service2Title": "Йога",
+      "service2Text": "[Дополнить — Alicia.]",
+      "service2ImageAlt": "Временное фото — yoga.",
+      "service3Title": "Life coaching",
+      "service3Text": "[Дополнить — Alicia.]",
+      "service3ImageAlt": "Временное фото — life coaching."
     },
     "about": {
       "title": "Обо мне",
@@ -97,7 +116,17 @@
       "methodTitle": "Как я работаю",
       "methodText": "[Дополнить — Alicia: ход сессии, длительность, очно или онлайн.]",
       "forWhoTitle": "Для кого?",
-      "forWhoText": "[Дополнить — Alicia: аудитория, без медицинских обещаний.]"
+      "forWhoText": "[Дополнить — Alicia: аудитория, без медицинских обещаний.]",
+      "journeyLink": "Мой путь подробнее"
+    },
+    "accomplishments": {
+      "title": "Сопровождение",
+      "intro": "[Дополнить — Alicia: введение — спорт, yoga, life coaching.]",
+      "service1Detail": "[Дополнить — Alicia: спорт — для кого, цели, формат.]",
+      "service2Detail": "[Дополнить — Alicia: yoga — стиль, уровень.]",
+      "service3Detail": "[Дополнить — Alicia: life coaching — темы, длительность.]",
+      "seePricing": "Цены",
+      "seeRdv": "Записаться"
     },
     "journey": {
       "title": "Мой путь",

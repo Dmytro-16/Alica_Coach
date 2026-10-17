@@ -156,7 +156,7 @@
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 3.5rem 1.5rem 4rem;
+  padding: 3.5rem 1.5rem 5rem;
 }
 
 .home-about-grid {
@@ -289,5 +289,355 @@
 
   .home-about-quote {
     transform: rotate(-6deg);
+  }
+}
+
+/* Accompagnements (accueil) — bandeau pleine largeur écran */
+
+.home-services {
+  width: 100%;
+  background-color: var(--color-secondaire, #e8ddcc);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-fond, #f8f5ef) 0%,
+    var(--color-secondaire, #e8ddcc) 14%,
+    var(--color-secondaire, #e8ddcc) 100%
+  );
+  border-bottom: 1px solid rgb(36 35 33 / 0.05);
+}
+
+.home-services-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3.5rem;
+  box-sizing: border-box;
+}
+
+.home-services-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-services-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-principal, #242321);
+}
+
+.home-services-intro {
+  margin: 0 0 2rem;
+  max-width: 36rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: center;
+  color: var(--body-color, #756e64);
+}
+
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin: 0 0 1.75rem;
+}
+
+.home-service {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  background-color: var(--color-fond, #f8f5ef);
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.2);
+  box-shadow: 0 6px 18px rgb(36 35 33 / 0.05);
+}
+
+.home-service-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-service-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1rem 1.25rem;
+}
+
+.home-service-icon {
+  font-size: 1.1rem;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-service-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-principal, #242321);
+}
+
+.home-service-text {
+  margin: 0;
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--body-color, #756e64);
+}
+
+.home-services-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-services-cta:hover {
+  color: var(--color-principal, #242321);
+}
+
+@media (max-width: 900px) {
+  .home-about-inner {
+    padding-bottom: 3.5rem;
+  }
+
+  .home-services-inner {
+    padding: 3.25rem 1rem 2.75rem;
+    align-items: flex-start;
+  }
+
+  .home-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services-title,
+  .home-services-intro {
+    text-align: left;
+    width: 100%;
+  }
+
+  .home-services-cta {
+    align-self: flex-start;
+  }
+}
+
+/* Ma méthode (accueil) */
+
+.home-approach {
+  background-color: var(--color-fond, #f8f5ef);
+  border-top: 1px solid rgb(36 35 33 / 0.05);
+}
+
+.home-approach-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.home-approach-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-approach-title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-principal, #242321);
+}
+
+.home-approach-text {
+  margin: 0 auto 2rem;
+  max-width: 40rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.home-approach-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem 1.25rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.home-approach-pillar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1.25rem 0.75rem;
+  background-color: var(--color-secondaire, #e8ddcc);
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.15);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-principal, #242321);
+}
+
+.home-approach-pillar i {
+  font-size: 1.25rem;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-approach-cta {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-boutons, #b89558) 0%,
+    var(--color-accent-clair, #d5bd91) 100%
+  );
+}
+
+.home-approach-cta:hover {
+  background-image: none;
+}
+
+@media (max-width: 900px) {
+  .home-approach-inner {
+    padding: 2.5rem 1rem 3rem;
+    text-align: left;
+  }
+
+  .home-approach-text {
+    margin-inline: 0;
+  }
+
+  .home-approach-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-approach-pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Témoignages (accueil) */
+
+.home-testimonials {
+  width: 100%;
+  background-color: var(--color-secondaire, #e8ddcc);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-fond, #f8f5ef) 0%,
+    var(--color-secondaire, #e8ddcc) 12%,
+    var(--color-secondaire, #e8ddcc) 100%
+  );
+  border-top: 1px solid rgb(36 35 33 / 0.05);
+}
+
+.home-testimonials-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.home-testimonials-eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-testimonials-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-principal, #242321);
+}
+
+.home-testimonials-teaser {
+  margin: 0 auto 2rem;
+  max-width: 36rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.home-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.home-testimonials-grid .temoignage-card {
+  background-color: var(--color-fond, #f8f5ef);
+  height: 100%;
+}
+
+.home-testimonials-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-boutons, #b89558);
+}
+
+.home-testimonials-cta:hover {
+  color: var(--color-principal, #242321);
+}
+
+@media (max-width: 900px) {
+  .home-testimonials-inner {
+    padding: 2.5rem 1rem 3rem;
+    text-align: left;
+  }
+
+  .home-testimonials-teaser {
+    margin-inline: 0;
+  }
+
+  .home-testimonials-grid {
+    grid-template-columns: 1fr;
   }
 }
