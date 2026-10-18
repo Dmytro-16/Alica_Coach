@@ -2,63 +2,93 @@
 
 .rdv-page {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.rdv-page > h1 {
+  width: 100%;
+  max-width: 52rem;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.55rem, 3.2vw, 1.95rem);
+}
+
+.rdv-lead {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 0 0.85rem;
+  text-align: center;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--color-principal, #242321);
+}
+
+.rdv-columns {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-top: 0.25rem;
 }
 
 .rdv-card {
   width: 100%;
-  max-width: 26rem;
-  margin: 0 auto;
-  padding: 2.5rem 2rem;
+  max-width: none;
+  margin: 0;
+  padding: 1.35rem 1.25rem 1.5rem;
   text-align: center;
   background-color: var(--color-secondaire, #e8ddcc);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgb(36 35 33 / 0.06);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgb(36 35 33 / 0.05);
 }
 
 .rdv-intro {
-  margin: -1rem 0 1.25rem;
-  font-size: var(--body-font-size, 16px);
-  line-height: var(--body-line-height, 1.7);
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
   color: var(--body-color, #756e64);
 }
 
-.rdv-title {
-  margin: 0 0 1.75rem;
-  font-family: var(--font-titres, "Cormorant Garamond", serif);
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 500;
-  color: var(--color-principal, #242321);
-  line-height: 1.2;
+.rdv-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
 }
 
 .rdv-trigger {
-  display: inline-block;
+  display: flex;
   width: 100%;
-  max-width: 16rem;
+  max-width: 13.5rem;
+  margin: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
-.rdv-trigger:disabled {
-  opacity: 0.55;
+.rdv-page .btn-rdv:hover,
+.rdv-page .btn-rdv:focus-visible {
+  transform: none;
+}
+
+.rdv-trigger[aria-disabled="true"] {
   cursor: wait;
-}
-
-.rdv-trigger .btn-rdv-link {
-  display: block;
-  width: 100%;
-  text-align: center;
-  cursor: inherit;
+  pointer-events: none;
 }
 
 .rdv-fallback-link {
-  display: inline-block;
-  margin-top: 1.25rem;
+  display: block;
+  margin: 0;
   font-family: var(--font-texte, "Montserrat", sans-serif);
-  font-size: var(--nav-font-size, 11px);
+  font-size: 10px;
   letter-spacing: var(--nav-letter-spacing, 0.08em);
+  line-height: 1.45;
   color: var(--body-color, #756e64);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -66,6 +96,87 @@
 
 .rdv-fallback-link:hover {
   color: var(--color-principal, #242321);
+}
+
+.rdv-steps {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.rdv-steps-title {
+  margin: 0 0 0.75rem;
+  text-align: center;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-boutons, #b89558);
+}
+
+.rdv-steps-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.rdv-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  background-color: rgb(232 221 204 / 0.45);
+  border-radius: 8px;
+  border: 1px solid rgb(36 35 33 / 0.05);
+}
+
+.rdv-step-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background-color: var(--color-boutons, #b89558);
+  color: var(--color-fond, #f8f5ef);
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.rdv-step-text {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--body-color, #756e64);
+  text-align: left;
+}
+
+.rdv-help {
+  width: 100%;
+  max-width: 52rem;
+  margin: 1.15rem 0 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--body-color, #756e64);
+}
+
+.rdv-help a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rdv-help-sep {
+  margin: 0 0.35rem;
+  color: var(--color-accent-clair, #d5bd91);
 }
 
 .rdv-setup-hint {
@@ -79,4 +190,46 @@
 .rdv-setup-hint code {
   font-size: 0.9em;
   word-break: break-all;
+}
+
+@media (min-width: 900px) {
+  .rdv-page.legal-page {
+    max-width: 56rem;
+  }
+
+  .rdv-columns {
+    flex-direction: row;
+    align-items: stretch;
+    max-width: 52rem;
+    gap: 1.35rem;
+  }
+
+  .rdv-card,
+  .rdv-steps {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rdv-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .rdv-steps {
+    padding: 1.35rem 1.15rem 1.4rem;
+    background-color: rgb(248 245 239 / 0.85);
+    border: 1px solid rgb(36 35 33 / 0.06);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgb(36 35 33 / 0.04);
+  }
+
+  .rdv-steps-title {
+    text-align: left;
+  }
+
+  .rdv-steps-list {
+    flex: 1;
+    justify-content: center;
+  }
 }

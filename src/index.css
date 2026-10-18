@@ -23,6 +23,29 @@ body {
 :root {
   --bp-tablet: 900px;
   --bp-mobile: 600px;
+  --scroll-padding-nav: 5.5rem;
+  /* Bouton RDV — standard + compact (nav mobile, footer, contact) */
+  --btn-rdv-bg: var(--color-boutons, #b89558);
+  --btn-rdv-bg-hover: var(--color-accent-clair, #d5bd91);
+  --btn-rdv-fg: var(--color-fond, #f8f5ef);
+  --btn-rdv-fg-hover: var(--color-principal, #242321);
+  --btn-rdv-font-size: 12px;
+  --btn-rdv-font-weight: 500;
+  --btn-rdv-letter-spacing: 0.08em;
+  --btn-rdv-radius: 30px;
+  --btn-rdv-padding-y: 0.5rem;
+  --btn-rdv-padding-x: 1rem;
+  --btn-rdv-compact-font-size: 12px;
+  --btn-rdv-compact-font-weight: 600;
+  --btn-rdv-compact-letter-spacing: 0.06em;
+  --btn-rdv-compact-padding-y: 0.4rem;
+  --btn-rdv-compact-padding-x: 0.7rem;
+  --btn-rdv-touch-size: 2.75rem;
+  --btn-rdv-touch-radius: 8px;
+  /* Espace identique sous la nav → titre de page (toutes les .legal-page) */
+  --page-padding-top: 2.5rem;
+  --page-padding-x: 1.5rem;
+  --page-padding-bottom: 4rem;
 }
 
 .app-layout {
@@ -31,8 +54,37 @@ body {
   min-height: 100%;
 }
 
+.app-layout > header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* Ombre nav au scroll — CSS uniquement (navigateurs récents) */
+@keyframes nav-scroll-shadow {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: 0 4px 16px rgb(36 35 33 / 0.07);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav-container {
+    animation: nav-scroll-shadow linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 64px;
+  }
+}
+
 .app-layout main {
   flex: 1;
+}
+
+html {
+  scroll-padding-top: var(--scroll-padding-nav);
 }
 
 h1,
@@ -52,8 +104,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.95rem 0.65rem;
   background-color: var(--color-secondaire, #e8ddcc);
+  border-bottom: 1px solid rgb(36 35 33 / 0.06);
 }
 .nav-list {
   display: flex;
@@ -144,12 +197,8 @@ a {
 }
 
 /* Pas de ligne sous le lien (style nav) sur le bouton RDV */
-.nav-rdv .btn-rdv-link::after {
+.nav-rdv .btn-rdv::after {
   content: none;
-}
-
-.nav-rdv .btn-rdv-link:hover::after {
-  transform: none;
 }
 
 .nav-list li a {
@@ -194,6 +243,16 @@ a {
   display: block;
   vertical-align: middle;
   min-width: 2.75rem;
+  background-color: rgb(36 35 33 / 0.06);
+  border-color: rgb(36 35 33 / 0.18);
+  box-shadow: none;
+}
+
+.nav-lang .locale-dropdown-select:hover,
+.nav-lang .locale-dropdown-select:focus {
+  background-color: rgb(184 149 88 / 0.14);
+  border-color: rgb(184 149 88 / 0.45);
+  box-shadow: none;
 }
 
 /* Langue — pilule discrète, alignée nav + bouton RDV */
@@ -265,13 +324,17 @@ a {
 }
 
 /* Prénom + lignes COACH — taille navbar (desktop / tablette) */
+.nav-container > .signature-container {
+  padding: 0.2rem 0.35rem 0.35rem;
+}
+
 .nav-container > .signature-container h1 {
   max-width: 100%;
 }
 
 .nav-container > .signature-container .signature-link {
   font-size: clamp(1.85rem, 2.8vw, 2.35rem);
-  line-height: 1.08;
+  line-height: 1.12;
   white-space: normal;
   text-align: left;
   overflow-wrap: normal;
@@ -308,41 +371,56 @@ a {
 }
 
 /* — BUTTON RDV —----------------------------------------------------*/
-.btn-rdv {
-  background-color: var(--color-boutons, #b89558);
-  padding: 0;
-  border-radius: 30px;
+a.btn-rdv,
+button.btn-rdv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--btn-rdv-padding-y) var(--btn-rdv-padding-x);
   border: none;
-  cursor: pointer;
-}
-
-.btn-rdv-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 30px;
-  color: var(--color-fond, #f8f5ef);
+  border-radius: var(--btn-rdv-radius);
+  background-color: var(--btn-rdv-bg);
+  color: var(--btn-rdv-fg);
   font-family: var(--font-texte, "Montserrat", sans-serif);
-  font-size: var(--nav-font-size, 12px);
-  font-weight: var(--nav-font-weight, 500);
-  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  font-size: var(--btn-rdv-font-size);
+  font-weight: var(--btn-rdv-font-weight);
+  letter-spacing: var(--btn-rdv-letter-spacing);
+  line-height: 1.2;
   text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.btn-rdv:hover .btn-rdv-link,
-.btn-rdv-link:hover {
-  background-color: var(--color-accent-clair, #d5bd91);
-  color: var(--color-principal, #242321);
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
+a.btn-rdv:hover,
+button.btn-rdv:hover {
+  background-color: var(--btn-rdv-bg-hover);
+  color: var(--btn-rdv-fg-hover);
+  transform: scale(1.03);
 }
 
-.btn-rdv--compact .btn-rdv-link {
-  padding: 0.35rem 0.75rem;
-  font-size: var(--footer-font-size, 10px);
+a.btn-rdv:focus-visible,
+button.btn-rdv:focus-visible {
+  outline: 2px solid var(--color-principal, #242321);
+  outline-offset: 2px;
 }
 
-.btn-rdv--compact:hover .btn-rdv-link,
-.btn-rdv--compact .btn-rdv-link:hover {
+a.btn-rdv--compact,
+button.btn-rdv--compact {
+  padding: var(--btn-rdv-compact-padding-y) var(--btn-rdv-compact-padding-x);
+  font-size: var(--btn-rdv-compact-font-size);
+  font-weight: var(--btn-rdv-compact-font-weight);
+  letter-spacing: var(--btn-rdv-compact-letter-spacing);
+}
+
+a.btn-rdv--compact:hover,
+button.btn-rdv--compact:hover {
   transform: scale(1.02);
 }
 
@@ -353,12 +431,11 @@ a {
   --footer-signature-name-size: 26px;
   --footer-social-icon-size: 18px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
   align-items: center;
   gap: 1rem 1.5rem;
-  padding: 1rem 1.25rem;
+  padding: 1.35rem 1.5rem 1.2rem;
   margin-top: auto;
   width: 100%;
   background-color: var(--footer-bg, #242321);
@@ -369,7 +446,7 @@ a {
 }
 
 .footer-container .signature-container {
-  padding: 0;
+  padding: 0.2rem 0 0;
   justify-content: center;
   align-items: flex-start;
   gap: 0.85rem;
@@ -378,19 +455,19 @@ a {
 .footer-container .signature-link {
   color: var(--color-blanc, #ffffff);
   font-size: var(--footer-signature-name-size);
-  line-height: 1;
+  line-height: 1.12;
   justify-content: flex-start;
   white-space: nowrap;
 }
 
 .footer-container .signature-text {
   justify-content: flex-start;
+  flex-wrap: nowrap;
   gap: 0.65rem;
 }
 
 .footer-container .signature-text p {
-  color: var(--footer-text, #e8ddcc);
-  font-size: var(--footer-font-size);
+  white-space: nowrap;
 }
 
 .footer-container .signature-separator {
@@ -414,12 +491,15 @@ a {
   align-items: center;
   gap: 0.65rem;
 }
-.footer-text {
+
+.footer-container .footer-text,
+.footer-container .signature-text p {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: var(--footer-font-size);
   font-weight: var(--nav-font-weight, 400);
-  letter-spacing: inherit;
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  line-height: 1;
   color: var(--footer-text, #e8ddcc);
 }
 
@@ -449,14 +529,18 @@ a {
 }
 
 .footer-legal {
-  flex: 1 1 16rem;
   text-align: center;
   font-size: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
+}
+
+.footer-legal-links {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .contact-snippet {
@@ -471,11 +555,6 @@ a {
 .footer-copyright {
   margin: 0;
   line-height: 1.4;
-}
-
-.footer-legal-links {
-  margin: 0;
-  line-height: 1.5;
 }
 
 .footer-social {
@@ -514,11 +593,18 @@ a {
 .legal-page {
   max-width: 42rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: var(--page-padding-top) var(--page-padding-x)
+    var(--page-padding-bottom);
+  box-sizing: border-box;
 }
 
 .legal-page h1 {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .legal-page p {
@@ -530,14 +616,59 @@ a {
   font-size: clamp(1.35rem, 3vw, 1.75rem);
 }
 
+/* Liens bas de page (ex. Tarifs, Accompagnements) */
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  width: 100%;
+  margin: 2rem 0 0;
+  text-align: center;
+}
+
+.page-actions a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-boutons, #b89558);
+}
+
+.page-actions a:hover {
+  color: var(--color-principal, #242321);
+}
+
+.page-actions .home-hero-cta,
+.page-actions .content-page-cta-link {
+  text-transform: none;
+  color: var(--color-fond, #f8f5ef);
+}
+
+.page-actions .home-hero-cta:hover,
+.page-actions .content-page-cta-link:hover {
+  color: var(--color-principal, #242321);
+}
+
+.page-actions .content-page-cta-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
 #methode {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: var(--scroll-padding-nav);
 }
 
 /* — RESPONSIVE — (nav, footer, pages) ------------------------------------ */
 
 /* 900px ------------------------------------------------------------ */
 @media (max-width: 900px) {
+  :root {
+    --scroll-padding-nav: 4.75rem;
+  }
+
   /* Nav — grille : Alicia à gauche | FR + RDV + menu à droite */
   .nav-container {
     display: grid;
@@ -547,14 +678,14 @@ a {
       "menu menu";
     align-items: center;
     column-gap: 0.5rem;
-    padding: 0.45rem 0.7rem;
+    padding: 0.7rem 0.75rem;
     min-height: 0;
   }
 
   .nav-container > .signature-container {
     grid-area: brand;
     min-width: 0;
-    padding: 0.6rem 0.9rem;
+    padding: 0.35rem 0.5rem 0.5rem;
     gap: 0.35rem;
     align-items: flex-start;
     align-self: center;
@@ -575,7 +706,7 @@ a {
     display: block;
     width: max-content;
     font-size: 2rem;
-    line-height: 1.05;
+    line-height: 1.12;
     text-align: left;
   }
 
@@ -602,8 +733,10 @@ a {
     height: var(--nav-action-size);
     min-width: var(--nav-action-size);
     padding: 0 0.5rem;
-    border: 1px solid rgb(36 35 33 / 0.28);
+    border: 1px solid rgb(36 35 33 / 0.22);
     border-radius: 8px;
+    background-color: rgb(36 35 33 / 0.06);
+    box-shadow: none;
     font-size: 12px;
     font-weight: 600;
     line-height: 1;
@@ -618,31 +751,12 @@ a {
     display: flex;
   }
 
-  .nav-rdv-mobile .btn-rdv {
-    height: var(--nav-action-size);
-    border-radius: 8px;
-    background-color: #9a7340;
-  }
-
-  .nav-rdv-mobile .btn-rdv-link {
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--nav-action-size);
-    min-width: var(--nav-action-size);
-    padding: 0 0.6rem;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: 0.06em;
-    color: #ffffff;
-  }
-
-  .nav-rdv-mobile .btn-rdv-link:hover,
-  .nav-rdv-mobile .btn-rdv:hover .btn-rdv-link {
-    transform: none;
+  a.btn-rdv--compact,
+  button.btn-rdv--compact {
+    min-height: var(--btn-rdv-touch-size);
+    min-width: var(--btn-rdv-touch-size);
+    padding-inline: 0.65rem;
+    border-radius: var(--btn-rdv-touch-radius);
   }
 
   .nav-toggle {
@@ -650,8 +764,9 @@ a {
     flex-shrink: 0;
     width: var(--nav-action-size);
     height: var(--nav-action-size);
-    border: 1px solid rgb(36 35 33 / 0.28);
+    border: 1px solid rgb(36 35 33 / 0.22);
     border-radius: 8px;
+    background-color: rgb(36 35 33 / 0.06);
   }
 
   .nav-toggle-bar {
@@ -668,8 +783,7 @@ a {
   }
 
   .nav-lang .locale-dropdown-select:focus-visible,
-  .nav-toggle:focus-visible,
-  .nav-rdv-mobile .btn-rdv-link:focus-visible {
+  .nav-toggle:focus-visible {
     outline: 2px solid var(--color-principal, #242321);
     outline-offset: 2px;
   }
@@ -701,13 +815,17 @@ a {
     font-weight: 500;
   }
 
-  /* Footer — plus léger : pas de signature ni piliers en double */
+  /* Footer mobile — compact (RDV puis liens en grille) */
   .footer-container {
+    --footer-font-size: 10px;
+    --footer-social-icon-size: 15px;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.45rem;
+    padding: 0.65rem 0.75rem 0.7rem;
     text-align: center;
-    padding: 1rem 0.85rem 1.15rem;
-    gap: 0.75rem;
   }
 
   .footer-left,
@@ -715,25 +833,43 @@ a {
     display: none;
   }
 
-  .footer-legal {
-    flex: 1 1 auto;
+  .footer-right {
+    order: 1;
     width: 100%;
+    align-items: center;
     gap: 0.25rem;
   }
 
-  .footer-right {
+  .footer-legal {
+    order: 2;
     width: 100%;
+    max-width: 20rem;
     align-items: center;
-    gap: 0.4rem;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .footer-copyright {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.3;
   }
 
   .footer-legal-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.35rem 0.75rem;
     justify-items: center;
-    max-width: 20rem;
+    gap: 0.28rem 0.55rem;
+    width: 100%;
+    max-width: 17.5rem;
     margin-inline: auto;
+    line-height: 1.35;
+  }
+
+  .footer-legal-links .footer-link {
+    text-align: center;
+    font-size: inherit;
+    max-width: 100%;
   }
 
   .footer-legal-links .footer-dot {
@@ -742,11 +878,14 @@ a {
 
   .footer-social {
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.45rem;
   }
 
-  .legal-page {
-    padding: 1.5rem 1rem 3rem;
+  :root {
+    --page-padding-top: 1.75rem;
+    --page-padding-x: 1rem;
+    --page-padding-bottom: 3rem;
   }
 }
 
@@ -757,16 +896,18 @@ a {
   }
 
   .footer-container {
-    --footer-font-size: 10px;
-    --footer-social-icon-size: 16px;
-    padding: 0.85rem 0.65rem 1rem;
+    padding: 0.55rem 0.65rem 0.65rem;
+    gap: 0.4rem;
   }
 
-  .footer-copyright {
-    font-size: 0.95em;
+  .footer-legal-links {
+    gap: 0.22rem 0.45rem;
+    max-width: 16.5rem;
   }
 
-  .legal-page {
-    padding: 1rem 0.75rem 2rem;
+  :root {
+    --page-padding-top: 1.25rem;
+    --page-padding-x: 0.75rem;
+    --page-padding-bottom: 2.5rem;
   }
 }

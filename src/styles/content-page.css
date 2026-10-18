@@ -1,0 +1,179 @@
+/* Pages contenu : À propos, Mon parcours */
+
+/* Largeur + marges latérales : .legal-page (--page-padding-x) */
+
+.content-page-header {
+  margin-bottom: 2rem;
+}
+
+.content-page-header h1 {
+  margin: 0 0 0.75rem;
+}
+
+.content-page-lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.content-page-section {
+  margin-bottom: 2.25rem;
+}
+
+.content-page-section h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--color-principal, #242321);
+}
+
+.content-page-section p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+.content-page-cta {
+  margin-top: 2.5rem;
+}
+
+.content-page-cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  background-color: var(--color-boutons, #b89558);
+  color: var(--color-fond, #f8f5ef);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.content-page-cta-link:hover {
+  background-color: var(--color-accent-clair, #d5bd91);
+  color: var(--color-principal, #242321);
+}
+
+/* À propos : photo + bloc qui suis-je */
+
+.about-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: start;
+  margin-bottom: 2.25rem;
+}
+
+.about-page-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.35);
+  box-shadow: 0 8px 24px rgb(36 35 33 / 0.06);
+}
+
+.about-page-hero h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.about-page-hero p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+/* Mon parcours : cartes */
+
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-card {
+  padding: 1.25rem 1.35rem;
+  background-color: var(--color-secondaire, #e8ddcc);
+  border-radius: 12px;
+  border: 1px solid rgb(184 149 88 / 0.25);
+}
+
+.journey-card h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-titres, "Cormorant Garamond", serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-principal, #242321);
+}
+
+.journey-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--body-color, #756e64);
+}
+
+/* À propos — tablette / mobile (aligné --bp-tablet 900px) */
+@media (max-width: 900px) {
+  .about-page-hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-page-photo {
+    max-width: min(100%, 15rem);
+    margin-inline: auto;
+  }
+
+  .about-page-hero h2 {
+    font-size: clamp(1.25rem, 4vw, 1.35rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .content-page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .content-page-lead {
+    font-size: 1rem;
+  }
+
+  .content-page-section {
+    margin-bottom: 1.75rem;
+  }
+
+  .content-page-section h2 {
+    font-size: clamp(1.35rem, 5vw, 1.65rem);
+  }
+
+  .about-page-photo {
+    max-width: 100%;
+  }
+
+  .content-page-cta {
+    margin-top: 2rem;
+  }
+
+  .journey-card {
+    padding: 1rem 1.1rem;
+  }
+
+  .journey-card h2 {
+    font-size: clamp(1.2rem, 4.5vw, 1.35rem);
+  }
+}

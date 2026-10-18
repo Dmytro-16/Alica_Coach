@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../src/styles/accomplishments.css";
+import { SERVICE_IMAGE_PATHS } from "../data/serviceImages.js";
 
-const ACCOMP_ITEMS = [
+const ACCOMP_META = [
   {
     titleKey: "pages.accueil.service1Title",
     leadKey: "pages.accueil.service1Text",
     detailKey: "pages.accomplishments.service1Detail",
     icon: "fa-dumbbell",
-    imageSrc: "/images/accomplishments/provisoire.avif",
     imageAltKey: "pages.accueil.service1ImageAlt",
   },
   {
@@ -16,7 +16,6 @@ const ACCOMP_ITEMS = [
     leadKey: "pages.accueil.service2Text",
     detailKey: "pages.accomplishments.service2Detail",
     icon: "fa-seedling",
-    imageSrc: "/images/accomplishments/provisoire.avif",
     imageAltKey: "pages.accueil.service2ImageAlt",
   },
   {
@@ -24,10 +23,14 @@ const ACCOMP_ITEMS = [
     leadKey: "pages.accueil.service3Text",
     detailKey: "pages.accomplishments.service3Detail",
     icon: "fa-heart",
-    imageSrc: "/images/accomplishments/provisoire.avif",
     imageAltKey: "pages.accueil.service3ImageAlt",
   },
 ];
+
+const ACCOMP_ITEMS = ACCOMP_META.map((item, index) => ({
+  ...item,
+  imageSrc: SERVICE_IMAGE_PATHS[index],
+}));
 
 export default function Accomp() {
   const { t } = useTranslation();
@@ -48,11 +51,10 @@ export default function Accomp() {
               decoding="async"
             />
             <div className="accomplishments-item-body">
-              <i
-                className={`fa-solid ${item.icon} accomplishments-item-icon`}
-                aria-hidden="true"
-              />
-              <h2 className="accomplishments-item-title">{t(item.titleKey)}</h2>
+              <h2>
+                <i className={`fa-solid ${item.icon}`} aria-hidden="true" />
+                {t(item.titleKey)}
+              </h2>
               <p className="accomplishments-item-lead">{t(item.leadKey)}</p>
               <p className="accomplishments-item-detail">{t(item.detailKey)}</p>
             </div>
@@ -60,7 +62,7 @@ export default function Accomp() {
         ))}
       </ul>
 
-      <p className="accomplishments-actions">
+      <p className="page-actions">
         <Link to="/tarifs">{t("pages.accomplishments.seePricing")}</Link>
         <Link to="/rdv">{t("pages.accomplishments.seeRdv")}</Link>
       </p>

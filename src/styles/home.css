@@ -145,6 +145,25 @@
   }
 }
 
+/* Accueil — libellés de section (option 1, texte doré + trait) */
+
+.home-about-eyebrow,
+.home-services-eyebrow,
+.home-approach-eyebrow,
+.home-testimonials-eyebrow {
+  display: inline-block;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.45rem;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  /* Doré un peu assombri pour rester lisible sur fond crème / beige */
+  color: #7a6332;
+  border-bottom: 2px solid var(--color-boutons, #b89558);
+}
+
 /* À propos (accueil) */
 
 .home-about {
@@ -164,15 +183,6 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.12fr) minmax(0, 0.82fr);
   gap: 2rem 2rem;
   align-items: center;
-}
-
-.home-about-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-boutons, #b89558);
 }
 
 .home-about-title {
@@ -301,9 +311,9 @@
     180deg,
     var(--color-fond, #f8f5ef) 0%,
     var(--color-secondaire, #e8ddcc) 14%,
-    var(--color-secondaire, #e8ddcc) 100%
+    var(--color-secondaire, #e8ddcc) 86%,
+    var(--color-fond, #f8f5ef) 100%
   );
-  border-bottom: 1px solid rgb(36 35 33 / 0.05);
 }
 
 .home-services-inner {
@@ -315,15 +325,6 @@
   margin: 0 auto;
   padding: 4rem 1.5rem 3.5rem;
   box-sizing: border-box;
-}
-
-.home-services-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-boutons, #b89558);
 }
 
 .home-services-title {
@@ -404,7 +405,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin: 0 auto;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -436,17 +436,12 @@
     text-align: left;
     width: 100%;
   }
-
-  .home-services-cta {
-    align-self: flex-start;
-  }
 }
 
 /* Ma méthode (accueil) */
 
 .home-approach {
   background-color: var(--color-fond, #f8f5ef);
-  border-top: 1px solid rgb(36 35 33 / 0.05);
 }
 
 .home-approach-inner {
@@ -455,15 +450,6 @@
   margin: 0 auto;
   padding: 3.5rem 1.5rem 4rem;
   text-align: center;
-}
-
-.home-approach-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-boutons, #b89558);
 }
 
 .home-approach-title {
@@ -514,6 +500,16 @@
   color: var(--color-boutons, #b89558);
 }
 
+.home-approach-pillar-hint {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  text-transform: none;
+  color: var(--body-color, #756e64);
+  text-align: center;
+}
+
 .home-approach-cta {
   background-image: linear-gradient(
     90deg,
@@ -558,7 +554,7 @@
     var(--color-secondaire, #e8ddcc) 12%,
     var(--color-secondaire, #e8ddcc) 100%
   );
-  border-top: 1px solid rgb(36 35 33 / 0.05);
+  /* border-top: px solid rgb(36 35 33 / 0.05); */
 }
 
 .home-testimonials-inner {
@@ -567,15 +563,6 @@
   margin: 0 auto;
   padding: 3.5rem 1.5rem 4rem;
   text-align: center;
-}
-
-.home-testimonials-eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-boutons, #b89558);
 }
 
 .home-testimonials-title {
@@ -639,5 +626,18 @@
 
   .home-testimonials-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-testimonials-inner {
+    padding: 2rem 0.85rem 2.5rem;
+  }
+
+  .home-testimonials-teaser {
+    margin-bottom: 1.35rem;
+    font-size: 0.95rem;
   }
 }

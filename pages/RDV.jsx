@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../src/styles/rdv.css";
+
+const RDV_STEPS = ["rdv.step1", "rdv.step2", "rdv.step3"];
 
 const rawCalendlyUrl = import.meta.env.VITE_CALENDLY_URL?.trim() ?? "";
 
@@ -74,30 +77,59 @@ export default function RDV() {
 
   return (
     <article className="legal-page rdv-page">
-      <div className="rdv-card">
-        <h1 className="rdv-title">{t("rdv.title")}</h1>
-        <p className="rdv-intro">{t("rdv.intro")}</p>
-        {calendlyUrl ? (
-          <>
-            <button
-              type="button"
-              className="btn-rdv rdv-trigger"
-              disabled={!ready}
-              onClick={openCalendly}
-            >
-              <span className="btn-rdv-link">{t("rdv.pickSlot")}</span>
-            </button>
-            <a
-              className="rdv-fallback-link"
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("rdv.openNewTab")}
-            </a>
-          </>
-        ) : null}
+      <h1>{t("rdv.title")}</h1>
+      <p className="rdv-lead">{t("rdv.lead")}</p>
+
+      <div className="rdv-columns">
+        <div className="rdv-card">
+          <p className="rdv-intro">{t("rdv.intro")}</p>
+          {calendlyUrl ? (
+            <div className="rdv-card-actions">
+              <button
+                type="button"
+                className="btn-rdv rdv-trigger"
+                aria-disabled={!ready}
+                onClick={() => {
+                  if (ready) openCalendly();
+                }}
+              >
+                {t("rdv.pickSlot")}
+              </button>
+              <a
+                className="rdv-fallback-link"
+                href={calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("rdv.openNewTab")}
+              </a>
+            </div>
+          ) : null}
+        </div>
+
+        <section className="rdv-steps" aria-labelledby="rdv-steps-title">
+          <h2 id="rdv-steps-title" className="rdv-steps-title">
+            {t("rdv.stepsTitle")}
+          </h2>
+          <ol className="rdv-steps-list">
+            {RDV_STEPS.map((key, index) => (
+              <li key={key} className="rdv-step">
+                <span className="rdv-step-num" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <span className="rdv-step-text">{t(key)}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
       </div>
+
+      <p className="rdv-help">
+        {t("rdv.helpQuestion")}{" "}
+        <Link to="/contact">{t("nav.contact")}</Link>
+        <span className="rdv-help-sep" aria-hidden="true">·</span>
+        <Link to="/tarifs">{t("nav.pricing")}</Link>
+      </p>
     </article>
   );
 }

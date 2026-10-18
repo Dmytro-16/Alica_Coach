@@ -59,20 +59,27 @@ export default function Contact() {
             />
           </div>
         </div>
-        <label htmlFor="subject" className="contact-subject-label">
-          {t("contact.subjectLabel")}
-        </label>
-        <div className="contact-form-row contact-form-row--subject-social">
-          <select id="subject" name="subject" required>
-            <option value="">{t("contact.subjectPh")}</option>
-            <option value="1">{t("contact.subject1")}</option>
-            <option value="2">{t("contact.subject2")}</option>
-            <option value="3">{t("contact.subject3")}</option>
-            <option value="4">{t("contact.subject4")}</option>
-            <option value="5">{t("contact.subject5")}</option>
-            <option value="6">{t("contact.subject6")}</option>
-          </select>
-          <FooterRight />
+        <div className="contact-field contact-field--subject">
+          <label htmlFor="subject" className="contact-label">
+            {t("contact.subjectLabel")}
+          </label>
+          <div
+            className="contact-subject-row"
+            aria-label={t("contact.asideAria")}
+          >
+            <select id="subject" name="subject" required>
+              <option value="">{t("contact.subjectPh")}</option>
+              <option value="1">{t("contact.subject1")}</option>
+              <option value="2">{t("contact.subject2")}</option>
+              <option value="3">{t("contact.subject3")}</option>
+              <option value="4">{t("contact.subject4")}</option>
+              <option value="5">{t("contact.subject5")}</option>
+              <option value="6">{t("contact.subject6")}</option>
+            </select>
+            <div className="contact-form-aside">
+              <FooterRight />
+            </div>
+          </div>
         </div>
         <label htmlFor="message">{t("contact.message")}</label>
         <textarea id="message" name="message" />

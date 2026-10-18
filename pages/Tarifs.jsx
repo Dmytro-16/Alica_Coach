@@ -26,8 +26,8 @@ export default function Tarifs() {
       </ul>
 
       <p className="pricing-disclaimer">{t("pages.pricing.disclaimer")}</p>
-      <p className="pricing-cta">
-        <Link to="/rdv">{t("rdv.cta")}</Link>
+      <p className="page-actions">
+        <Link to="/rdv">{t("pages.accomplishments.seeRdv")}</Link>
       </p>
     </article>
   );

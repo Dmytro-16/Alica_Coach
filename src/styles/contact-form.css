@@ -17,7 +17,6 @@
   margin-top: 1.5rem;
 }
 
-/* Deux champs côte à côte (Nom|Prénom, Email|Tél.) */
 .contact-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,81 +31,22 @@
   min-width: 0;
 }
 
-@media (max-width: 520px) {
-  .contact-form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form-row--subject-social {
-    flex-direction: column;
-  }
-}
-
-/* Sujet + bloc social / RDV (réutilise footerRight) */
-.contact-subject-label {
-  margin-bottom: -0.35rem;
-}
-
-.contact-form-row--subject-social {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem 1.5rem;
-  width: 100%;
-}
-
-.contact-form-row--subject-social select {
-  flex: 1 1 14rem;
-  max-width: 22rem;
-  margin: 0;
-}
-
-.contact-form-row--subject-social .footer-right {
-  flex: 0 1 auto;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.contact-form .footer-social {
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-form .footer-text-container {
-  display: none;
-}
-
-.contact-form .footer-social-link {
-  color: var(--color-principal, #242321);
-}
-
-.contact-form .footer-social-link:hover {
-  color: var(--color-boutons, #b89558);
-}
-
-/* Labels en ligne : colonne gauche / colonne droite */
 label.contact-label,
 label.contact-label_2 {
   display: block;
   font-family: var(--font-texte, "Montserrat", sans-serif);
-  font-size: var(--nav-font-size, 12px);
-  font-weight: var(--nav-font-weight, 500);
-  letter-spacing: var(--nav-letter-spacing, 0.08em);
-  color: var(--color-principal, #242321);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--body-color, #756e64);
 }
 
-.contact-form label:not(.contact-label):not(.contact-label_2) {
+.contact-form > label[for="message"] {
   font-family: var(--font-texte, "Montserrat", sans-serif);
-  font-size: var(--nav-font-size, 12px);
-  font-weight: var(--nav-font-weight, 500);
-  letter-spacing: var(--nav-letter-spacing, 0.08em);
-  color: var(--color-principal, #242321);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--body-color, #756e64);
 }
 
 .contact-form input,
@@ -123,6 +63,11 @@ label.contact-label_2 {
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
+}
+
+.contact-form select {
+  cursor: pointer;
+  line-height: 1.35;
 }
 
 .contact-form input::placeholder,
@@ -144,8 +89,53 @@ label.contact-label_2 {
   resize: vertical;
 }
 
-.contact-form select {
-  cursor: pointer;
+/* « Vous êtes » : liste + RDV / réseaux côte à côte (desktop) */
+.contact-subject-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  width: 100%;
+}
+
+.contact-subject-row select {
+  flex: 1 1 14rem;
+  width: auto;
+  max-width: 22rem;
+  margin: 0;
+}
+
+.contact-form-aside {
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.contact-form-aside .footer-right {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-form-aside .footer-social {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+}
+
+.contact-form .footer-text-container {
+  display: none;
+}
+
+.contact-form .footer-social-link {
+  color: var(--color-principal, #242321);
+}
+
+.contact-form .footer-social-link:hover {
+  color: var(--color-boutons, #b89558);
 }
 
 .contact-form button[type="submit"] {
@@ -170,4 +160,56 @@ label.contact-label_2 {
   background-color: var(--color-accent-clair, #d5bd91);
   color: var(--color-principal, #242321);
   transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
+  .contact-form select {
+    font-size: 0.9375rem;
+    padding: 0.55rem 0.7rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  label.contact-label,
+  label.contact-label_2,
+  .contact-form > label[for="message"] {
+    font-size: 0.6875rem;
+  }
+
+  .contact-subject-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .contact-subject-row select {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: none;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .contact-form-aside {
+    display: flex;
+    width: 100%;
+    padding-top: 0.65rem;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgb(184 149 88 / 0.25);
+  }
+
+  .contact-form-aside .footer-right {
+    width: auto;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .contact-form-aside .footer-social {
+    justify-content: center;
+  }
 }

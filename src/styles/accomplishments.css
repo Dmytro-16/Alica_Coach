@@ -1,11 +1,15 @@
 /* Page Accompagnements (/accomplishments) */
 
 .accomplishments-page {
+  width: 100%;
   max-width: 56rem;
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .accomplishments-intro {
   margin: 0 0 2rem;
+  text-align: center;
   line-height: 1.65;
   color: var(--body-color, #756e64);
 }
@@ -26,6 +30,16 @@
   align-items: start;
 }
 
+/* Lignes paires : même grille, sens inversé (photo à droite, 14rem) */
+.accomplishments-item:nth-child(even) {
+  direction: rtl;
+}
+
+.accomplishments-item:nth-child(even) .accomplishments-item-photo,
+.accomplishments-item:nth-child(even) .accomplishments-item-body {
+  direction: ltr;
+}
+
 .accomplishments-item-photo {
   display: block;
   width: 100%;
@@ -42,18 +56,21 @@
   gap: 0.5rem;
 }
 
-.accomplishments-item-icon {
-  font-size: 1.1rem;
-  color: var(--color-boutons, #b89558);
-}
-
-.accomplishments-item-title {
+.accomplishments-item-body h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0;
   font-family: var(--font-titres, "Cormorant Garamond", serif);
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.2;
   color: var(--color-principal, #242321);
+}
+
+.accomplishments-item-body h2 i {
+  font-size: 1.1rem;
+  color: var(--color-boutons, #b89558);
 }
 
 .accomplishments-item-lead {
@@ -70,28 +87,43 @@
   color: var(--body-color, #756e64);
 }
 
-.accomplishments-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
-  margin: 0;
-}
+@media (max-width: 900px) {
+  .accomplishments-list {
+    gap: 1.75rem;
+  }
 
-.accomplishments-actions a {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--color-boutons, #b89558);
-}
-
-.accomplishments-actions a:hover {
-  color: var(--color-principal, #242321);
-}
-
-@media (max-width: 700px) {
   .accomplishments-item {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .accomplishments-item:nth-child(even) {
+    direction: ltr;
+  }
+
+  .accomplishments-item-photo {
+    max-width: min(100%, 18rem);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .accomplishments-intro {
+    margin-bottom: 1.5rem;
+    font-size: 0.98rem;
+    text-align: left;
+  }
+
+  .accomplishments-list {
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .accomplishments-item-body h2 {
+    font-size: clamp(1.3rem, 5vw, 1.5rem);
+  }
+
+  .accomplishments-item-photo {
+    max-width: 100%;
   }
 }

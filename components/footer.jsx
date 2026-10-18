@@ -1,7 +1,6 @@
 import SiGnature from "../components/siGnature";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ContactSnippet from "./ContactSnippet";
 import FooterRight from "./footerRight";
 
 export default function Footer() {
@@ -13,9 +12,15 @@ export default function Footer() {
         <SiGnature />
       </div>
       <div className="footer-legal">
-        <ContactSnippet />
         <p className="footer-copyright">{t("footer.copyright")}</p>
         <p className="footer-legal-links">
+          <Link to="/contact" className="footer-link">
+            {t("nav.contact")}
+          </Link>
+          <span className="footer-dot" aria-hidden="true">
+            {" "}
+            ·{" "}
+          </span>
           <Link to="/temoignages" className="footer-link">
             {t("footer.testimonials")}
           </Link>

@@ -95,3 +95,31 @@
 .temoignages-google:empty {
   display: none;
 }
+
+@media (max-width: 600px) {
+  .temoignages-grid {
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .temoignage-card {
+    gap: 0.5rem;
+    padding: 0.85rem 0.75rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgb(36 35 33 / 0.04);
+  }
+
+  .temoignage-stars {
+    font-size: 0.85rem;
+  }
+
+  .temoignage-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .temoignage-author {
+    font-size: 0.7rem;
+  }
+}

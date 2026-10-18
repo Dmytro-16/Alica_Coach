@@ -7,13 +7,11 @@ export default function ButtonRdv({
   onNavigate,
 }) {
   const { t } = useTranslation();
-  const btnClass = compact ? "btn-rdv btn-rdv--compact" : "btn-rdv";
+  const className = compact ? "btn-rdv btn-rdv--compact" : "btn-rdv";
 
   return (
-    <button type="button" className={btnClass}>
-      <Link to="/rdv" className="btn-rdv-link" onClick={onNavigate}>
-        {t(labelKey)}
-      </Link>
-    </button>
+    <Link to="/rdv" className={className} onClick={onNavigate}>
+      {t(labelKey)}
+    </Link>
   );
 }
