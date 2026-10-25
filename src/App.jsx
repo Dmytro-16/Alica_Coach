@@ -15,8 +15,24 @@ import Paiement from "../pages/Paiement";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import "./App.css";
+import SimpleGate from "../components/SimpleGate";
+import { useState } from "react";
 
 function App() {
+  const [unlocked, setUnlocked] = useState(
+    () => sessionStorage.getItem("site_ok") === "1",
+  );
+
+  if (!unlocked) {
+    return (
+      <SimpleGate
+        onUnlock={() => {
+          sessionStorage.setItem("site_ok", "1");
+          setUnlocked(true);
+        }}
+      />
+    );
+  }
   return (
     <div className="app-layout">
       <header>
