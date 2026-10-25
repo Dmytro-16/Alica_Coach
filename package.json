@@ -8,13 +8,13 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test:mongo": "node scripts/test-mongo.mjs",
-    "seed:contact": "node server/seed-contact-test.mjs"
+    "dev:api": "node server/dev-api.mjs"
   },
   "dependencies": {
-    "dotenv": "^18.0.3",
-    "mongodb": "^6.20.0",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
     "i18next": "^26.4.2",
+    "mongodb": "^7.7.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-i18next": "^17.0.15",

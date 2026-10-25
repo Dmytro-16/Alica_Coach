@@ -77,7 +77,10 @@
     "subject6": "Other",
     "asideAria": "Book and social links",
     "message": "Message",
-    "submit": "Send"
+    "submit": "Send",
+    "sending": "Sending…",
+    "sent": "Message sent. I will get back to you as soon as possible.",
+    "error": "Could not send. Please try again or email me directly."
   },
   "pages": {
     "accueil": {

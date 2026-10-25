@@ -77,7 +77,10 @@
     "subject6": "Autre",
     "asideAria": "Rendez-vous et réseaux sociaux",
     "message": "Message",
-    "submit": "Envoyer"
+    "submit": "Envoyer",
+    "sending": "Envoi en cours…",
+    "sent": "Message envoyé. Je vous réponds dès que possible.",
+    "error": "Envoi impossible. Réessayez ou écrivez-moi par email."
   },
   "pages": {
     "accueil": {
