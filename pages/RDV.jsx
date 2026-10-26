@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../src/styles/rdv.css";
 
 const RDV_STEPS = ["rdv.step1", "rdv.step2", "rdv.step3"];
-
 const rawCalendlyUrl = import.meta.env.VITE_CALENDLY_URL?.trim() ?? "";
 
 /** Couleurs charte Alicia pour le widget Calendly (sans #). */
@@ -61,6 +60,7 @@ function loadCalendlyAssets() {
 
 export default function RDV() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [ready, setReady] = useState(Boolean(window.Calendly));
 
   useEffect(() => {
@@ -69,6 +69,21 @@ export default function RDV() {
       .then(() => setReady(true))
       .catch(() => setReady(false));
   }, []);
+
+  useEffect(() => {
+    function onCalendlyMessage(e) {
+      if (e.origin !== "https://calendly.com") return;
+      if (e.data?.event === "calendly.event_scheduled") {
+        if (window.Calendly?.closePopupWidget) {
+          window.Calendly.closePopupWidget();
+        }
+        navigate("/paiement?from=rdv", { replace: true });
+      }
+    }
+
+    window.addEventListener("message", onCalendlyMessage);
+    return () => window.removeEventListener("message", onCalendlyMessage);
+  }, [navigate]);
 
   const openCalendly = useCallback(() => {
     if (!calendlyUrl || !window.Calendly) return;
@@ -105,6 +120,7 @@ export default function RDV() {
               </a>
             </div>
           ) : null}
+          <p className="rdv-pay-hint">{t("rdv.payAfterBooking")}</p>
         </div>
 
         <section className="rdv-steps" aria-labelledby="rdv-steps-title">
@@ -125,9 +141,10 @@ export default function RDV() {
       </div>
 
       <p className="rdv-help">
-        {t("rdv.helpQuestion")}{" "}
-        <Link to="/contact">{t("nav.contact")}</Link>
-        <span className="rdv-help-sep" aria-hidden="true">·</span>
+        {t("rdv.helpQuestion")} <Link to="/contact">{t("nav.contact")}</Link>
+        <span className="rdv-help-sep" aria-hidden="true">
+          ·
+        </span>
         <Link to="/tarifs">{t("nav.pricing")}</Link>
       </p>
     </article>

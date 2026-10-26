@@ -207,8 +207,16 @@
     },
     "payment": {
       "title": "Paiement",
-      "p1": "Le règlement s’effectue avant ou après la séance selon accord préalable. Une facture peut être établie sur demande. Annulation : merci de prévenir au moins 24 h à l’avance.",
-      "p2": "Le paiement en ligne sera disponible prochainement via un lien sécurisé.",
+      "p1": "Choisissez votre offre ci-dessous. Une facture peut être établie sur demande. Annulation : merci de prévenir au moins 24 h à l’avance.",
+      "p2": "Paiement sécurisé par carte (Stripe). Vous serez redirigé vers une page de règlement officielle.",
+      "afterRdv": "Votre créneau est réservé. Merci de régler la séance pour confirmer votre rendez-vous.",
+      "successMessage": "Paiement reçu — merci. Un reçu vous est envoyé par email. Alicia vous confirmera les détails de la séance.",
+      "cancelMessage": "Paiement annulé. Vous pouvez réessayer quand vous le souhaitez.",
+      "errorMessage": "Impossible d’ouvrir le paiement. Réessayez dans un instant ou contactez-nous.",
+      "payCta": "Payer en ligne",
+      "payLoading": "Redirection…",
+      "enterpriseContact": "Demander un devis",
+      "offersAria": "Offres payables en ligne",
       "p3Prefix": "Pour toute question :"
     },
     "notFound": {

@@ -27,6 +27,7 @@ export default function Tarifs() {
 
       <p className="pricing-disclaimer">{t("pages.pricing.disclaimer")}</p>
       <p className="page-actions">
+        <Link to="/paiement">{t("common.seePaymentPage")}</Link>
         <Link to="/rdv">{t("pages.accomplishments.seeRdv")}</Link>
       </p>
     </article>
