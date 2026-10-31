@@ -4,6 +4,8 @@ import babel from "@rolldown/plugin-babel";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // SITE_PASSWORD (porte preview) exposé au front ; secrets serveur sans préfixe SITE_/VITE_
+  envPrefix: ["VITE_", "SITE_"],
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
   server: {
     host: "0.0.0.0",

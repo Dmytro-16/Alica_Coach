@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Accueil from "../pages/Accueil";
 import Apropos from "../pages/A propos";
@@ -15,8 +16,24 @@ import Paiement from "../pages/Paiement";
 import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import "./App.css";
+import SimpleGate from "../components/SimpleGate";
 
 function App() {
+  const [unlocked, setUnlocked] = useState(
+    () => sessionStorage.getItem("site_ok") === "1",
+  );
+
+  if (!unlocked) {
+    return (
+      <SimpleGate
+        onUnlock={() => {
+          sessionStorage.setItem("site_ok", "1");
+          setUnlocked(true);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="app-layout">
       <header>
