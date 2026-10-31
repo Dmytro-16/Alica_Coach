@@ -17,10 +17,6 @@ import NavBar from "../components/navBar";
 import Footer from "../components/footer";
 import "./App.css";
 import SimpleGate from "../components/SimpleGate";
-<<<<<<< HEAD
-import { useState } from "react";
-=======
->>>>>>> dev
 
 function App() {
   const [unlocked, setUnlocked] = useState(
@@ -37,10 +33,7 @@ function App() {
       />
     );
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> dev
   return (
     <div className="app-layout">
       <header>
