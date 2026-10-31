@@ -1,0 +1,157 @@
+/* Page Paiement — cartes offres + Stripe Checkout */
+
+.payment-page {
+  max-width: 56rem;
+}
+
+.payment-intro {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  color: var(--body-color, #756e64);
+  line-height: 1.55;
+}
+
+.payment-secure {
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-principal, #242321);
+  background-color: rgb(184 149 88 / 0.12);
+  border-radius: 10px;
+  border: 1px solid rgb(184 149 88 / 0.25);
+}
+
+.payment-banner {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.payment-banner--success {
+  color: #1e4d32;
+  background-color: #e8f3ec;
+  border: 1px solid #b8d9c4;
+}
+
+.payment-banner--cancel {
+  color: var(--color-principal, #242321);
+  background-color: var(--color-secondaire, #e8ddcc);
+  border: 1px solid rgb(36 35 33 / 0.08);
+}
+
+.payment-banner--info {
+  color: var(--color-principal, #242321);
+  background-color: #f3ede3;
+  border: 1px solid rgb(184 149 88 / 0.35);
+}
+
+.payment-banner--error {
+  color: #6b2e2e;
+  background-color: #fceeee;
+  border: 1px solid #e8b4b4;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background-color: var(--color-secondaire, #e8ddcc);
+  border-radius: 12px;
+  padding: 1.35rem 1.15rem 1.5rem;
+  box-shadow: 0 6px 18px rgb(36 35 33 / 0.05);
+}
+
+.payment-card--contact {
+  grid-column: 1 / -1;
+  align-items: center;
+  text-align: center;
+  padding: 1.15rem 1rem;
+}
+
+.payment-card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: var(--color-principal, #242321);
+}
+
+.payment-card-text {
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--body-color, #756e64);
+}
+
+.payment-page .payment-pay-btn {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0.25rem 0 0;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.payment-page .payment-pay-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.payment-page .payment-contact-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-boutons, #b89558);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.payment-page .payment-contact-link:hover,
+.payment-page .payment-contact-link:focus-visible {
+  color: var(--color-principal, #242321);
+}
+
+.payment-disclaimer {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--body-color, #756e64);
+  line-height: 1.5;
+}
+
+.payment-page--done .payment-grid,
+.payment-page--done .payment-secure {
+  display: none;
+}
+
+.payment-done-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 700px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-card--contact {
+    grid-column: auto;
+  }
+}

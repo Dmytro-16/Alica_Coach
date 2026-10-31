@@ -207,8 +207,16 @@
     },
     "payment": {
       "title": "Payment",
-      "p1": "Payment before or after the session as agreed. Invoice on request. Cancellation: please give at least 24 hours’ notice.",
-      "p2": "Online payment will be available soon via a secure link.",
+      "p1": "Choose your option below. Invoice on request. Cancellation: please give at least 24 hours’ notice.",
+      "p2": "Secure card payment (Stripe). You will be redirected to the official checkout page.",
+      "afterRdv": "Your slot is booked. Please pay for your session to confirm your appointment.",
+      "successMessage": "Payment received — thank you. A receipt will be emailed to you. Alicia will confirm session details.",
+      "cancelMessage": "Payment cancelled. You can try again whenever you like.",
+      "errorMessage": "Unable to open checkout. Please try again or contact us.",
+      "payCta": "Pay online",
+      "payLoading": "Redirecting…",
+      "enterpriseContact": "Request a quote",
+      "offersAria": "Online payment options",
       "p3Prefix": "Questions:"
     },
     "notFound": {
