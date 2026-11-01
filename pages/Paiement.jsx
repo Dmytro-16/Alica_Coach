@@ -16,11 +16,11 @@ const CHECKOUT_OFFERS = [
   },
 ];
 
-async function startCheckout(offer) {
+async function startCheckout(offer, fromRdv) {
   const res = await fetch("/api/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ offer }),
+    body: JSON.stringify({ offer, fromRdv: fromRdv || undefined }),
   });
   const data = await res.json();
   if (!res.ok || !data.url) {
@@ -43,7 +43,7 @@ export default function Paiement() {
     setError(false);
     setLoading(offer);
     try {
-      await startCheckout(offer);
+      await startCheckout(offer, fromRdv);
     } catch {
       setError(true);
       setLoading(null);
@@ -64,7 +64,11 @@ export default function Paiement() {
       )}
       {checkout === "cancel" && (
         <div className="payment-banner payment-banner--cancel" role="status">
-          {t("pages.payment.cancelMessage")}
+          {t(
+            fromRdv
+              ? "pages.payment.cancelMessageRdv"
+              : "pages.payment.cancelMessage",
+          )}
         </div>
       )}
       {fromRdv && !checkout && (

@@ -66,6 +66,7 @@ export default function Accueil() {
         <img
           className="home-hero-bg"
           src="/images/home/hero-provisoire.jpg"
+          // src="/images/home/lac_acceuil.jpg"
           alt=""
           width={1400}
           height={788}
@@ -97,7 +98,7 @@ export default function Accueil() {
                 {t("pages.accueil.pillarYoga")}
               </li>
               <li>
-                {/* <i className="fa-solid fa-heart" aria-hidden="true" /> */}
+                <i className="fa-solid fa-heart" aria-hidden="true" />
                 {t("pages.accueil.pillarLife")}
               </li>
             </ul>

@@ -120,7 +120,6 @@ export default function RDV() {
               </a>
             </div>
           ) : null}
-          <p className="rdv-pay-hint">{t("rdv.payAfterBooking")}</p>
         </div>
 
         <section className="rdv-steps" aria-labelledby="rdv-steps-title">
