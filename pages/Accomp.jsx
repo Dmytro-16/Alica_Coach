@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../src/styles/accomplishments.css";
-import { SERVICE_IMAGE_PATHS } from "../data/serviceImages.js";
+import { SERVICE_IMAGES } from "../data/serviceImages.js";
 
 const ACCOMP_META = [
   {
@@ -29,7 +29,8 @@ const ACCOMP_META = [
 
 const ACCOMP_ITEMS = ACCOMP_META.map((item, index) => ({
   ...item,
-  imageSrc: SERVICE_IMAGE_PATHS[index],
+  imageSrc: SERVICE_IMAGES[index].src,
+  imageVariant: SERVICE_IMAGES[index].variant,
 }));
 
 export default function Accomp() {
@@ -44,7 +45,12 @@ export default function Accomp() {
         {ACCOMP_ITEMS.map((item) => (
           <li key={item.titleKey} className="accomplishments-item">
             <img
-              className="accomplishments-item-photo"
+              className={
+                item.imageVariant
+                  ? `accomplishments-item-photo accomplishments-item-photo--${item.imageVariant}`
+                  : "accomplishments-item-photo"
+              }
+              draggable={false}
               src={item.imageSrc}
               alt={t(item.imageAltKey)}
               loading="lazy"

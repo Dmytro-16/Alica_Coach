@@ -15,6 +15,7 @@ export default function Apropos() {
       <div className="about-page-hero">
         <img
           className="about-page-photo"
+          draggable={false}
           src="/images/home/about-alicia.jpg"
           alt={t("pages.accueil.aboutImageAlt")}
           loading="lazy"

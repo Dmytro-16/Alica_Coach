@@ -45,9 +45,16 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center center;
   border-radius: 12px;
   border: 1px solid rgb(184 149 88 / 0.35);
   box-shadow: 0 8px 24px rgb(36 35 33 / 0.06);
+}
+
+/* ali3.jpg — remplit la carte (cover), ancré à gauche sur Alicia */
+.accomplishments-item-photo--studio {
+  object-fit: cover;
+  object-position: left 42%;
 }
 
 .accomplishments-item-body {

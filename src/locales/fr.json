@@ -25,6 +25,10 @@
     "copyright": "© 2026 Alicia Semenchuk",
     "legalNotice": "Mentions légales",
     "privacy": "Confidentialité",
+    "cgv": "CGV",
+    "cookies": "Cookies",
+    "cgu": "CGU",
+    "mediation": "Médiation",
     "testimonials": "Témoignages",
     "faq": "FAQ",
     "payment": "Paiement",
@@ -35,7 +39,8 @@
     "pillarBalance": "Equilibre",
     "pillarBalanceHint": "rythme & harmonie",
     "pillarConfidence": "Confiance",
-    "pillarConfidenceHint": "ancrage & assurance"
+    "pillarConfidenceHint": "ancrage & assurance",
+    "manageCookies": "Gérer mes cookies"
   },
   "rdv": {
     "cta": "Prendre rendez-vous",
@@ -228,6 +233,25 @@
       "rightsText": "Accès, rectification, suppression, opposition —",
       "processorsTitle": "Sous-traitants",
       "processorsText": "Calendly, Tally, [hébergeur], [Stripe — si paiement en ligne plus tard]."
+    },
+    "cgvB2c": {
+      "title": "Conditions générales de vente — Particuliers"
+    },
+    "cgvB2b": {
+      "title": "Conditions générales de vente — Professionnels"
+    },
+    "cgv": {
+      "title": "Conditions générales de vente",
+      "intro": "Deux jeux de conditions : prestations pour les particuliers et pour les clients professionnels."
+    },
+    "cookies": {
+      "title": "Politique cookies et traceurs"
+    },
+    "cgu": {
+      "title": "Conditions générales d'utilisation"
+    },
+    "mediation": {
+      "title": "Médiation de la consommation"
     },
     "payment": {
       "title": "Paiement",

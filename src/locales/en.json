@@ -25,6 +25,10 @@
     "copyright": "© 2026 Alicia Semenchuk",
     "legalNotice": "Legal notice",
     "privacy": "Privacy",
+    "cgv": "Terms of sale",
+    "cookies": "Cookies",
+    "cgu": "Terms of use",
+    "mediation": "Mediation",
     "testimonials": "Testimonials",
     "faq": "FAQ",
     "payment": "Payment",
@@ -228,6 +232,25 @@
       "rightsText": "Access, rectification, erasure, objection —",
       "processorsTitle": "Processors",
       "processorsText": "Calendly, Tally, [host], [Stripe — if online payment later]."
+    },
+    "cgvB2c": {
+      "title": "Terms of sale — Consumers"
+    },
+    "cgvB2b": {
+      "title": "Terms of sale — Business clients"
+    },
+    "cgv": {
+      "title": "Terms of sale",
+      "intro": "Two sets of terms: services for consumers and for business clients."
+    },
+    "cookies": {
+      "title": "Cookie policy"
+    },
+    "cgu": {
+      "title": "Terms of use"
+    },
+    "mediation": {
+      "title": "Consumer mediation"
     },
     "payment": {
       "title": "Payment",

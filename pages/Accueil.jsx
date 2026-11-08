@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import temoignages from "../data/temoignages.json";
-import { SERVICE_IMAGE_PATHS } from "../data/serviceImages.js";
+import { SERVICE_IMAGES } from "../data/serviceImages.js";
 import TemoignageStars from "../components/temoignageStars";
 import "../src/styles/home.css";
 import "../src/styles/temoignages.css";
@@ -54,7 +54,8 @@ const HOME_SERVICE_META = [
 
 const HOME_SERVICES = HOME_SERVICE_META.map((item, index) => ({
   ...item,
-  imageSrc: SERVICE_IMAGE_PATHS[index],
+  imageSrc: SERVICE_IMAGES[index].src,
+  imageVariant: SERVICE_IMAGES[index].variant,
 }));
 
 export default function Accueil() {
@@ -65,6 +66,7 @@ export default function Accueil() {
       <section className="home-hero" aria-labelledby="home-hero-title">
         <img
           className="home-hero-bg"
+          draggable={false}
           src="/images/home/hero-provisoire.jpg"
           // src="/images/home/lac_acceuil.jpg"
           alt=""
@@ -72,6 +74,7 @@ export default function Accueil() {
           height={788}
           fetchPriority="high"
           decoding="async"
+          loading="lazy"
         />
         <div className="home-hero-overlay" aria-hidden="true" />
 
@@ -112,6 +115,7 @@ export default function Accueil() {
             <figure className="home-about-visual">
               <img
                 className="home-about-photo"
+                draggable={false}
                 src="/images/home/about-alicia.jpg"
                 alt={t("pages.accueil.aboutImageAlt")}
                 loading="lazy"
@@ -164,7 +168,12 @@ export default function Accueil() {
             {HOME_SERVICES.map((service) => (
               <article key={service.titleKey} className="home-service">
                 <img
-                  className="home-service-photo"
+                  className={
+                    service.imageVariant
+                      ? `home-service-photo home-service-photo--${service.imageVariant}`
+                      : "home-service-photo"
+                  }
+                  draggable={false}
                   src={service.imageSrc}
                   alt={t(service.imageAltKey)}
                   loading="lazy"

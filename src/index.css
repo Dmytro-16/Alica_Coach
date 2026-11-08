@@ -19,6 +19,13 @@ body {
   background-color: var(--color-fond, #f8f5ef);
 }
 
+/* Dissuasion légère sur les visuels (glisser-déposer, sélection) — pas un blocage total */
+.app-layout img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* Breakpoints responsive (utilisés dans @media en bas de fichier) */
 :root {
   --bp-tablet: 900px;
@@ -478,6 +485,15 @@ button.btn-rdv--compact:hover {
   color: var(--footer-text, #e8ddcc);
   text-decoration: none;
   gap: 0.25rem;
+}
+button.footer-link--button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
 }
 
 .footer-link:hover {

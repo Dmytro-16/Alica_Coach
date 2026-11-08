@@ -371,6 +371,12 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center center;
+}
+
+.home-service-photo--studio {
+  object-fit: cover;
+  object-position: left 42%;
 }
 
 .home-service-body {
