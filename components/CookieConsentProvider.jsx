@@ -7,7 +7,7 @@ import {
   getValidConsent,
   rejectAllConsent,
   writeConsent,
-} from "../lib/cookieConsent";
+} from "../src/cookies/cookieConsent";
 
 const CookieConsentContext = createContext(null);
 

@@ -53,6 +53,8 @@
     "step3": "We meet online in a calm, supportive setting.",
     "pickSlot": "Choose a time slot",
     "openNewTab": "Open calendar in a new tab",
+    "cookieNotice": "The on-site booking widget loads only if you accept “Booking” cookies (Calendly). Otherwise use the link below.",
+    "manageCookies": "Manage cookies",
     "helpQuestion": "Questions before you book?"
   },
   "temoignages": {

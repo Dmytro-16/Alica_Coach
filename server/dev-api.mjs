@@ -1,9 +1,9 @@
 /* eslint-env node */
 import "dotenv/config";
 import express from "express";
-import { validateContactPayload } from "../lib/contact/validateContact.js";
-import { getDbName, getMongoClient } from "../lib/mongo/mongoClient.js";
-import { createCheckoutSession } from "../lib/stripe/createCheckoutSession.js";
+import { validateContactPayload } from "./services/contact/validateContact.js";
+import { getDbName, getMongoClient } from "./services/mongo/mongoClient.js";
+import { createCheckoutSession } from "./services/stripe/createCheckoutSession.js";
 const PORT = Number(process.env.CONTACT_API_PORT) || 3001;
 const COLLECTION = "contact_messages";
 

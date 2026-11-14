@@ -431,10 +431,49 @@
   .home-services-inner {
     padding: 3.25rem 1rem 2.75rem;
     align-items: flex-start;
+    overflow-x: clip;
+  }
+
+  .home-services-grid-scroll {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(184 149 88 / 0.45) transparent;
+    touch-action: pan-x pinch-zoom;
+  }
+
+  .home-services-grid-scroll:focus-visible {
+    outline: 2px solid var(--color-boutons, #b89558);
+    outline-offset: 4px;
+    border-radius: 8px;
   }
 
   .home-services-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: max-content;
+    max-width: none;
+    margin-bottom: 1.25rem;
+    padding: 0.15rem 1.25rem 0.5rem;
+  }
+
+  .home-service {
+    flex: 0 0 calc(100vw - 2.5rem);
+    width: calc(100vw - 2.5rem);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: auto;
   }
 
   .home-services-title,
@@ -488,9 +527,10 @@
 .home-approach-pillar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 1.25rem 0.75rem;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: var(--color-secondaire, #e8ddcc);
   border-radius: 12px;
   border: 1px solid rgb(184 149 88 / 0.15);
@@ -501,12 +541,28 @@
   color: var(--color-principal, #242321);
 }
 
+.home-approach-pillar-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background-color: #0d0d0c;
+}
+
+.home-approach-pillar-title {
+  display: block;
+  padding: 0.85rem 0.65rem 0.25rem;
+  text-align: center;
+}
+
 .home-approach-pillar i {
   font-size: 1.25rem;
   color: var(--color-boutons, #b89558);
 }
 
 .home-approach-pillar-hint {
+  display: block;
+  padding: 0 0.65rem 1rem;
   font-size: 0.65rem;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -532,20 +588,52 @@
   .home-approach-inner {
     padding: 2.5rem 1rem 3rem;
     text-align: left;
+    overflow-x: clip;
   }
 
   .home-approach-text {
     margin-inline: 0;
   }
 
-  .home-approach-pillars {
-    grid-template-columns: repeat(2, 1fr);
+  .home-approach-pillars-scroll {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(184 149 88 / 0.45) transparent;
+    touch-action: pan-x pinch-zoom;
   }
-}
 
-@media (max-width: 480px) {
+  .home-approach-pillars-scroll:focus-visible {
+    outline: 2px solid var(--color-boutons, #b89558);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
   .home-approach-pillars {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: max-content;
+    max-width: none;
+    margin-bottom: 1.25rem;
+    padding: 0.15rem 1.25rem 0.5rem;
+  }
+
+  .home-approach-pillar {
+    flex: 0 0 min(72vw, 17.5rem);
+    width: min(72vw, 17.5rem);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
 }
 
@@ -624,16 +712,54 @@
   .home-testimonials-inner {
     padding: 2.5rem 1rem 3rem;
     text-align: left;
+    overflow-x: clip;
   }
 
   .home-testimonials-teaser {
     margin-inline: 0;
   }
 
+  .home-testimonials-grid-scroll {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(184 149 88 / 0.45) transparent;
+    touch-action: pan-x pinch-zoom;
+  }
+
+  .home-testimonials-grid-scroll:focus-visible {
+    outline: 2px solid var(--color-boutons, #b89558);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
   .home-testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: max-content;
+    max-width: none;
     margin-bottom: 1.25rem;
+    padding: 0.15rem 1.25rem 0.5rem;
+    text-align: left;
+  }
+
+  .home-testimonials-grid .temoignage-card {
+    flex: 0 0 calc(100vw - 2.5rem);
+    width: calc(100vw - 2.5rem);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: auto;
   }
 }
 

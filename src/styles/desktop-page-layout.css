@@ -1,0 +1,246 @@
+/*
+ * Bureau (≥1200px) — importé en dernier (App.jsx).
+ *
+ * Accueil + grilles : pleine largeur utile (--desktop-pad-x).
+ * Texte (À propos, Contact, FAQ, légales…) : 48rem → 50rem, mise en page inchangée.
+ */
+
+@media (min-width: 1200px) {
+  :root {
+    --desktop-pad-x: clamp(1.25rem, 3.25vw, 3.5rem);
+    --desktop-pad-x-wide: clamp(2rem, 4vw, 4.5rem);
+    --desktop-prose-max: 50rem;
+  }
+
+  /* —— Accueil —— */
+  .home-page .home-hero-inner,
+  .home-page .home-about-inner,
+  .home-page .home-approach-inner,
+  .home-page .home-testimonials-inner,
+  .home-services > .home-services-inner {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: var(--desktop-pad-x);
+    box-sizing: border-box;
+  }
+
+  .home-services > .home-services-inner {
+    align-items: stretch;
+  }
+
+  .home-services-eyebrow,
+  .home-services-title,
+  .home-services-intro,
+  .home-services-inner > .page-actions,
+  .home-approach-inner > .home-approach-eyebrow,
+  .home-approach-inner > .home-approach-title,
+  .home-approach-inner > .home-approach-text,
+  .home-approach-inner > .page-actions,
+  .home-testimonials-inner > .home-testimonials-eyebrow,
+  .home-testimonials-inner > .home-testimonials-title,
+  .home-testimonials-inner > .home-testimonials-teaser,
+  .home-testimonials-inner > .page-actions {
+    align-self: center;
+    text-align: center;
+  }
+
+  .home-services-intro,
+  .home-testimonials-teaser,
+  .home-approach-text {
+    max-width: var(--desktop-prose-max);
+    margin-inline: auto;
+  }
+
+  .home-about-grid {
+    width: 100%;
+    gap: clamp(1.5rem, 2.5vw, 2.75rem);
+  }
+
+  .home-about-text {
+    max-width: none;
+  }
+
+  .home-about-visual {
+    max-width: min(100%, 30rem);
+  }
+
+  .home-services-grid,
+  .home-testimonials-grid,
+  .home-approach-pillars {
+    width: 100%;
+    max-width: none;
+    gap: clamp(1rem, 2vw, 1.75rem);
+  }
+
+  .home-testimonials-grid {
+    align-items: stretch;
+  }
+
+  .home-testimonials-grid .temoignage-card {
+    height: 100%;
+  }
+
+  .home-service,
+  .home-approach-pillar {
+    height: 100%;
+  }
+
+  /* Pages texte — colonne élargie, structure inchangée */
+  main
+    .legal-page:not(.accomplishments-page):not(.pricing-page):not(.payment-page):not(
+      .temoignages-page
+    ):not(.rdv-page),
+  main .legal-page.legal-page--document {
+    max-width: 48rem;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  /* Pages grilles — coque pleine largeur + gouttières */
+  main .legal-page.accomplishments-page,
+  main .legal-page.pricing-page,
+  main .legal-page.payment-page,
+  main .legal-page.temoignages-page,
+  main .legal-page.rdv-page {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: var(--desktop-pad-x);
+    box-sizing: border-box;
+  }
+
+  /* Accompagnements (page) */
+
+  .accomplishments-list {
+    width: 100%;
+  }
+
+  .accomplishments-item {
+    grid-template-columns: minmax(0, min(20rem, 22vw)) minmax(0, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  }
+
+  /* Tarifs */
+  .pricing-scroll {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .pricing-grid--scroll {
+    width: 100%;
+    max-width: none;
+    justify-content: stretch;
+    padding-inline: 0;
+  }
+
+  .pricing-grid--scroll .pricing-card {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 14.5rem;
+    max-width: none;
+  }
+
+  /* Témoignages */
+  .temoignages-grid {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+    align-items: stretch;
+  }
+
+  .temoignage-card {
+    height: 100%;
+  }
+
+  /* Paiement — grille raisonnable sur très grand écran */
+  .payment-grid {
+    width: 100%;
+    max-width: 52rem;
+    margin-inline: auto;
+    gap: clamp(1.25rem, 2vw, 2rem);
+    align-items: stretch;
+  }
+
+  .payment-card {
+    height: 100%;
+  }
+
+  /* RDV — fond plein largeur, contenu centré (~comme avant) */
+  .rdv-page.legal-page {
+    align-items: stretch;
+  }
+
+  .rdv-page > h1,
+  .rdv-lead,
+  .rdv-columns,
+  .rdv-help,
+  .rdv-setup-hint {
+    width: 100%;
+    max-width: 56rem;
+    margin-inline: auto;
+  }
+
+  .rdv-columns {
+    flex-direction: row;
+    align-items: stretch;
+    gap: clamp(1.25rem, 2vw, 2rem);
+  }
+
+  .rdv-card,
+  .rdv-steps {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Nav / footer — mêmes gouttières que le contenu */
+  .nav-container,
+  .footer-container {
+    padding-inline: var(--desktop-pad-x);
+  }
+
+  .cookie-banner {
+    right: var(--desktop-pad-x);
+  }
+}
+
+@media (min-width: 1600px) {
+  main
+    .legal-page:not(.accomplishments-page):not(.pricing-page):not(.payment-page):not(
+      .temoignages-page
+    ):not(.rdv-page),
+  main .legal-page.legal-page--document {
+    max-width: 50rem;
+  }
+
+  .home-page .home-hero-inner,
+  .home-page .home-about-inner,
+  .home-page .home-approach-inner,
+  .home-page .home-testimonials-inner,
+  .home-services > .home-services-inner,
+  main .legal-page.accomplishments-page,
+  main .legal-page.pricing-page,
+  main .legal-page.payment-page,
+  main .legal-page.temoignages-page,
+  main .legal-page.rdv-page {
+    padding-inline: var(--desktop-pad-x-wide);
+  }
+
+  .nav-container,
+  .footer-container {
+    padding-inline: var(--desktop-pad-x-wide);
+  }
+
+  .cookie-banner {
+    right: var(--desktop-pad-x-wide);
+  }
+
+  .home-services-grid,
+  .home-testimonials-grid {
+    gap: clamp(1.25rem, 2.25vw, 2.25rem);
+  }
+
+  .home-approach-pillars {
+    gap: clamp(1rem, 1.75vw, 1.75rem);
+  }
+}

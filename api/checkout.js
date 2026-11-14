@@ -1,4 +1,4 @@
-import { createCheckoutSession } from "../lib/stripe/createCheckoutSession.js";
+import { createCheckoutSession } from "../server/services/stripe/createCheckoutSession.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

@@ -19,7 +19,9 @@ function readStoredLocale() {
 }
 
 export function normalizeLocaleCode(lng) {
-  const code = String(lng ?? "fr").split("-")[0].toLowerCase();
+  const code = String(lng ?? "fr")
+    .split("-")[0]
+    .toLowerCase();
   return SUPPORTED_LOCALES.includes(code) ? code : "fr";
 }
 

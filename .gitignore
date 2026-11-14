@@ -24,9 +24,10 @@ coverage
 .env.*
 !.env.example
 
-# Doc perso (machine locale — pas sur GitHub)
+# Doc perso / diplôme / suivi local (pas sur GitHub)
 INSTRUCTION.md
 todo-liste.md
+ARBORESCENCE.md
 
 # Dossier examen / diplôme développeur (projet Alicia Coach — local uniquement)
 examen-diplome/

@@ -54,6 +54,8 @@
     "step3": "Nous nous retrouvons en ligne, dans un cadre bienveillant.",
     "pickSlot": "Choisir un créneau",
     "openNewTab": "Ouvrir le calendrier dans un nouvel onglet",
+    "cookieNotice": "Le créneau s’affiche sur le site après acceptation des cookies « Réservation » (Calendly). Sans ce choix, utilisez le lien ci-dessous.",
+    "manageCookies": "Gérer mes cookies",
     "helpQuestion": "Une question avant de réserver ?"
   },
   "temoignages": {

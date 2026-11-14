@@ -23,10 +23,17 @@ import "./App.css";
 import SimpleGate from "../components/SimpleGate";
 import CookieBanner from "../components/CookieBanner";
 import { CookieConsentProvider } from "../components/CookieConsentProvider";
+import IntroVideo from "../components/InrtoVideo";
+import "./styles/desktop-page-layout.css";
+
+const INTRO_SEEN_KEY = "alicia_coach_intro_seen";
 
 function App() {
   const [unlocked, setUnlocked] = useState(
     () => sessionStorage.getItem("site_ok") === "1",
+  );
+  const [introDone, setIntroDone] = useState(
+    () => sessionStorage.getItem(INTRO_SEEN_KEY) === "1",
   );
 
   if (!unlocked) {
@@ -35,6 +42,16 @@ function App() {
         onUnlock={() => {
           sessionStorage.setItem("site_ok", "1");
           setUnlocked(true);
+        }}
+      />
+    );
+  }
+  if (!introDone) {
+    return (
+      <IntroVideo
+        onDone={() => {
+          sessionStorage.setItem(INTRO_SEEN_KEY, "1");
+          setIntroDone(true);
         }}
       />
     );

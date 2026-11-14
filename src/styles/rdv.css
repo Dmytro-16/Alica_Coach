@@ -82,6 +82,33 @@
   pointer-events: none;
 }
 
+.rdv-cookie-notice {
+  margin: 0;
+  padding: 0 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--body-color, #756e64);
+  text-align: center;
+}
+
+.rdv-cookie-manage {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: 10px;
+  letter-spacing: var(--nav-letter-spacing, 0.08em);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--color-boutons, #b89558);
+  cursor: pointer;
+}
+
+.rdv-cookie-manage:hover {
+  color: var(--color-principal, #242321);
+}
+
 .rdv-fallback-link {
   display: block;
   margin: 0;

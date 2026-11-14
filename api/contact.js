@@ -1,6 +1,6 @@
 /* eslint-env node */
-import { validateContactPayload } from "../lib/contact/validateContact.js";
-import { getDbName, getMongoClient } from "../lib/mongo/mongoClient.js";
+import { validateContactPayload } from "../server/services/contact/validateContact.js";
+import { getDbName, getMongoClient } from "../server/services/mongo/mongoClient.js";
 
 const COLLECTION = "contact_messages";
 

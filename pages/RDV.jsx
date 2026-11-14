@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useCookieConsent } from "../components/CookieConsentProvider";
 import "../src/styles/rdv.css";
 
 const RDV_STEPS = ["rdv.step1", "rdv.step2", "rdv.step3"];
@@ -61,16 +62,24 @@ function loadCalendlyAssets() {
 export default function RDV() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [ready, setReady] = useState(Boolean(window.Calendly));
+  const { bookingAllowed, openCookiePreferences } = useCookieConsent();
+  const [ready, setReady] = useState(
+    () => bookingAllowed && Boolean(window.Calendly),
+  );
 
   useEffect(() => {
-    if (!calendlyUrl) return;
+    if (!calendlyUrl || !bookingAllowed) {
+      setReady(false);
+      return;
+    }
     loadCalendlyAssets()
       .then(() => setReady(true))
       .catch(() => setReady(false));
-  }, []);
+  }, [bookingAllowed]);
 
   useEffect(() => {
+    if (!bookingAllowed) return;
+
     function onCalendlyMessage(e) {
       if (e.origin !== "https://calendly.com") return;
       if (e.data?.event === "calendly.event_scheduled") {
@@ -83,7 +92,7 @@ export default function RDV() {
 
     window.addEventListener("message", onCalendlyMessage);
     return () => window.removeEventListener("message", onCalendlyMessage);
-  }, [navigate]);
+  }, [navigate, bookingAllowed]);
 
   const openCalendly = useCallback(() => {
     if (!calendlyUrl || !window.Calendly) return;
@@ -100,16 +109,20 @@ export default function RDV() {
           <p className="rdv-intro">{t("rdv.intro")}</p>
           {calendlyUrl ? (
             <div className="rdv-card-actions">
-              <button
-                type="button"
-                className="btn-rdv rdv-trigger"
-                aria-disabled={!ready}
-                onClick={() => {
-                  if (ready) openCalendly();
-                }}
-              >
-                {t("rdv.pickSlot")}
-              </button>
+              {bookingAllowed ? (
+                <button
+                  type="button"
+                  className="btn-rdv rdv-trigger"
+                  aria-disabled={!ready}
+                  onClick={() => {
+                    if (ready) openCalendly();
+                  }}
+                >
+                  {t("rdv.pickSlot")}
+                </button>
+              ) : (
+                <p className="rdv-cookie-notice">{t("rdv.cookieNotice")}</p>
+              )}
               <a
                 className="rdv-fallback-link"
                 href={calendlyUrl}
@@ -118,6 +131,15 @@ export default function RDV() {
               >
                 {t("rdv.openNewTab")}
               </a>
+              {!bookingAllowed ? (
+                <button
+                  type="button"
+                  className="rdv-cookie-manage"
+                  onClick={openCookiePreferences}
+                >
+                  {t("rdv.manageCookies")}
+                </button>
+              ) : null}
             </div>
           ) : null}
         </div>

@@ -2,34 +2,12 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import temoignages from "../data/temoignages.json";
 import { SERVICE_IMAGES } from "../data/serviceImages.js";
+import { HOME_APPROACH_VIDEOS } from "../data/approachVideos.js";
 import TemoignageStars from "../components/temoignageStars";
 import "../src/styles/home.css";
 import "../src/styles/temoignages.css";
 
 const HOME_TESTIMONIALS = temoignages.slice(0, 3);
-
-const HOME_APPROACH_PILLARS = [
-  {
-    labelKey: "footer.pillarBody",
-    hintKey: "footer.pillarBodyHint",
-    icon: "fa-heart-pulse",
-  },
-  {
-    labelKey: "footer.pillarMind",
-    hintKey: "footer.pillarMindHint",
-    icon: "fa-brain",
-  },
-  {
-    labelKey: "footer.pillarBalance",
-    hintKey: "footer.pillarBalanceHint",
-    icon: "fa-scale-balanced",
-  },
-  {
-    labelKey: "footer.pillarConfidence",
-    hintKey: "footer.pillarConfidenceHint",
-    icon: "fa-star",
-  },
-];
 
 const HOME_SERVICE_META = [
   {
@@ -164,7 +142,12 @@ export default function Accueil() {
           <p className="home-services-intro">
             {t("pages.accueil.servicesText")}
           </p>
-          <div className="home-services-grid">
+          <div
+            className="home-services-grid-scroll"
+            tabIndex={0}
+            aria-label={t("pages.accueil.servicesHeadline")}
+          >
+            <div className="home-services-grid">
             {HOME_SERVICES.map((service) => (
               <article key={service.titleKey} className="home-service">
                 <img
@@ -189,6 +172,7 @@ export default function Accueil() {
                 </div>
               </article>
             ))}
+            </div>
           </div>
           <p className="page-actions">
             <Link to="/accomplishments" className="home-services-cta">
@@ -210,10 +194,24 @@ export default function Accueil() {
             {t("pages.accueil.approachText")}
           </p>
 
-          <ul className="home-approach-pillars">
-            {HOME_APPROACH_PILLARS.map((pillar) => (
+          <div
+            className="home-approach-pillars-scroll"
+            tabIndex={0}
+            aria-label={t("pages.accueil.approachTitle")}
+          >
+            <ul className="home-approach-pillars">
+            {HOME_APPROACH_VIDEOS.map((pillar) => (
               <li key={pillar.labelKey} className="home-approach-pillar">
-                <i className={`fa-solid ${pillar.icon}`} aria-hidden="true" />
+                <video
+                  className="home-approach-pillar-video"
+                  src={pillar.videoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  aria-label={t(pillar.labelKey)}
+                />
                 <span className="home-approach-pillar-title">
                   {t(pillar.labelKey)}
                 </span>
@@ -222,7 +220,16 @@ export default function Accueil() {
                 </span>
               </li>
             ))}
+            </ul>
+          </div>
+
+          {/* Anciennes cartes avec icônes (sans vidéo)
+          <ul className="home-approach-pillars">
+            ...
+              <i className={`fa-solid ${pillar.icon}`} aria-hidden="true" />
+            ...
           </ul>
+          */}
 
           <p className="page-actions">
             <Link
@@ -250,17 +257,23 @@ export default function Accueil() {
             {t("pages.accueil.testimonialsTeaser")}
           </p>
 
-          <ul className="home-testimonials-grid">
-            {HOME_TESTIMONIALS.map((item) => (
-              <li key={item.id} className="temoignage-card">
-                <TemoignageStars count={item.stars} />
-                <blockquote className="temoignage-text">
-                  &ldquo;{item.text}&rdquo;
-                </blockquote>
-                <p className="temoignage-author">&mdash; {item.author}</p>
-              </li>
-            ))}
-          </ul>
+          <div
+            className="home-testimonials-grid-scroll"
+            tabIndex={0}
+            aria-label={t("temoignages.title")}
+          >
+            <ul className="home-testimonials-grid">
+              {HOME_TESTIMONIALS.map((item) => (
+                <li key={item.id} className="temoignage-card">
+                  <TemoignageStars count={item.stars} />
+                  <blockquote className="temoignage-text">
+                    &ldquo;{item.text}&rdquo;
+                  </blockquote>
+                  <p className="temoignage-author">&mdash; {item.author}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <p className="page-actions">
             <Link to="/temoignages" className="home-testimonials-cta">

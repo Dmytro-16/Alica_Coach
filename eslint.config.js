@@ -8,7 +8,7 @@ export default defineConfig([
   globalIgnores(["dist"]),
   {
     files: ["**/*.{js,jsx}"],
-    ignores: ["api/**", "server/**", "lib/**"],
+    ignores: ["api/**", "server/**"],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
@@ -28,7 +28,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["lib/cookieConsent.js"],
+    files: ["src/cookies/cookieConsent.js"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -36,7 +36,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["api/**/*.js", "server/**/*.mjs", "lib/**/*.js"],
+    files: ["api/**/*.js", "server/**/*.{js,mjs}"],
     extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 2020,
