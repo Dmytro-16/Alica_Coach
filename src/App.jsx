@@ -8,6 +8,7 @@ import Contact from "../pages/Contact";
 import Tarifs from "../pages/Tarifs";
 import RDV from "../pages/RDV";
 import Témoignages from "../pages/Témoignages";
+import TemoignagesSubmit from "../pages/TemoignagesSubmit";
 import Page404 from "../pages/404";
 import MentionsLegales from "../pages/MentionsLegales";
 import PolitiqueConfidentialite from "../pages/PolitiqueConfidentialite";
@@ -72,6 +73,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/tarifs" element={<Tarifs />} />
             <Route path="/rdv" element={<RDV />} />
+            <Route
+              path="/temoignages/submit"
+              element={<TemoignagesSubmit />}
+            />
             <Route path="/temoignages" element={<Témoignages />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route

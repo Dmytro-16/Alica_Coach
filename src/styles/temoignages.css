@@ -23,10 +23,19 @@
   list-style: none;
 }
 
+.temoignages-grid > li {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .temoignage-card {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
   background-color: var(--color-secondaire, #e8ddcc);
   border-radius: 12px;
   padding: 1.25rem 1rem;
@@ -42,6 +51,11 @@
 
 .temoignage-text {
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
   font-family: var(--font-texte, "Montserrat", sans-serif);
   font-size: var(--body-font-size, 16px);
   line-height: var(--body-line-height, 1.7);
@@ -50,11 +64,128 @@
 
 .temoignage-author {
   margin: 0;
+  margin-top: auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   font-family: var(--font-texte, "Montserrat", sans-serif);
   font-size: var(--nav-font-size, 12px);
   font-weight: var(--nav-font-weight, 500);
   letter-spacing: var(--nav-letter-spacing, 0.08em);
   color: var(--color-principal, #242321);
+}
+
+.temoignages-submit-page .temoignages-form {
+  width: 100%;
+  max-width: 36rem;
+  margin: 1.5rem auto 0;
+}
+
+.temoignages-star-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.temoignages-star-input-btn {
+  padding: 0.25rem 0.15rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-secondaire, #e8ddcc);
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.temoignages-star-input-btn.is-filled {
+  color: var(--color-boutons, #b89558);
+}
+
+.temoignages-star-input-btn:hover,
+.temoignages-star-input-btn:focus-visible {
+  color: var(--color-boutons, #b89558);
+  transform: scale(1.08);
+  outline: none;
+}
+
+.temoignages-star-input-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgb(184 149 88 / 0.35);
+  border-radius: 4px;
+}
+
+.temoignages-consent-field {
+  margin-top: 0.25rem;
+}
+
+.temoignages-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.temoignages-consent-text {
+  font-family: var(--font-texte, "Montserrat", sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: var(--body-color, #756e64);
+}
+
+.contact-form .temoignages-consent input[type="checkbox"] {
+  width: 1.125rem;
+  height: 1.125rem;
+  min-width: 1.125rem;
+  margin-top: 0.15rem;
+  padding: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-boutons, #b89558);
+  border: 1px solid var(--color-secondaire, #e8ddcc);
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.contact-form .temoignages-consent input[type="checkbox"]:focus {
+  outline: 2px solid rgb(184 149 88 / 0.35);
+  outline-offset: 1px;
+}
+
+.temoignages-consent-link {
+  font-weight: 500;
+  color: var(--color-boutons, #b89558);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.temoignages-consent-link:hover {
+  color: var(--color-principal, #242321);
+}
+
+.contact-form.temoignages-form .contact-form-status {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  text-align: left;
+}
+
+
+.temoignages-form-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.temoignages-empty {
+  margin: 0 0 1.5rem;
+  opacity: 0.85;
 }
 
 .temoignages-tally {
@@ -86,6 +217,23 @@
   transform: scale(1.02);
 }
 
+/* Sinon .page-actions a (index.css) écrase le bouton */
+.page-actions .temoignages-tally-cta {
+  text-transform: none;
+  font-size: var(--nav-font-size, 12px);
+  color: var(--color-fond, #f8f5ef);
+  background-color: var(--color-boutons, #b89558);
+}
+
+.page-actions .temoignages-tally-cta:hover {
+  color: var(--color-principal, #242321);
+  background-color: var(--color-accent-clair, #d5bd91);
+}
+
+.temoignages-actions {
+  margin-top: 2rem;
+}
+
 .temoignages-google {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
@@ -96,13 +244,57 @@
   display: none;
 }
 
-@media (max-width: 600px) {
-  .temoignages-grid {
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .temoignages-page {
+    overflow-x: clip;
   }
 
+  .temoignages-grid-scroll {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(184 149 88 / 0.45) transparent;
+    touch-action: pan-x pinch-zoom;
+  }
+
+  .temoignages-grid-scroll:focus-visible {
+    outline: 2px solid var(--color-boutons, #b89558);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  .temoignages-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+    width: max-content;
+    max-width: none;
+    margin-top: 1.25rem;
+    padding: 0.15rem 1.25rem 0.5rem;
+  }
+
+  .temoignages-grid > li.temoignage-card {
+    flex: 0 0 calc(100vw - 2.5rem);
+    width: calc(100vw - 2.5rem);
+    max-width: calc(100vw - 2.5rem);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
   .temoignage-card {
     gap: 0.5rem;
     padding: 0.85rem 0.75rem;

@@ -1,13 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import temoignages from "../data/temoignages.json";
 import { SERVICE_IMAGES } from "../data/serviceImages.js";
 import { HOME_APPROACH_VIDEOS } from "../data/approachVideos.js";
 import TemoignageStars from "../components/temoignageStars";
 import "../src/styles/home.css";
 import "../src/styles/temoignages.css";
-
-const HOME_TESTIMONIALS = temoignages.slice(0, 3);
 
 const HOME_SERVICE_META = [
   {
@@ -38,6 +36,14 @@ const HOME_SERVICES = HOME_SERVICE_META.map((item, index) => ({
 
 export default function Accueil() {
   const { t } = useTranslation();
+  const [homeTestimonials, setHomeTestimonials] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/testimonials")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => setHomeTestimonials((data?.items ?? []).slice(0, 3)))
+      .catch(() => setHomeTestimonials([]));
+  }, []);
 
   return (
     <div className="home-page">
@@ -263,7 +269,7 @@ export default function Accueil() {
             aria-label={t("temoignages.title")}
           >
             <ul className="home-testimonials-grid">
-              {HOME_TESTIMONIALS.map((item) => (
+              {homeTestimonials.map((item) => (
                 <li key={item.id} className="temoignage-card">
                   <TemoignageStars count={item.stars} />
                   <blockquote className="temoignage-text">

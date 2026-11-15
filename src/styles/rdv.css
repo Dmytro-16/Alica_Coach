@@ -49,8 +49,8 @@
 
 .rdv-intro {
   margin: 0 0 1rem;
-  font-size: 0.875rem;
-  line-height: 1.55;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--body-color, #756e64);
 }
 
@@ -196,9 +196,18 @@
   color: var(--body-color, #756e64);
 }
 
+/* Liens Contact / Tarifs — comme .page-actions (index.css) */
 .rdv-help a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-boutons, #b89558);
+}
+
+.rdv-help a:hover {
+  color: var(--color-principal, #242321);
 }
 
 .rdv-help-sep {
@@ -240,7 +249,9 @@
   .rdv-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 1.35rem 1.15rem 1.4rem;
+    text-align: left;
   }
 
   .rdv-steps {
@@ -251,7 +262,13 @@
     box-shadow: 0 6px 18px rgb(36 35 33 / 0.04);
   }
 
-  .rdv-steps-title {
+  .rdv-card .rdv-steps-title,
+  .rdv-steps .rdv-steps-title {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .rdv-intro {
     text-align: left;
   }
 

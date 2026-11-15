@@ -7,7 +7,6 @@ import "../src/styles/rdv.css";
 const RDV_STEPS = ["rdv.step1", "rdv.step2", "rdv.step3"];
 const rawCalendlyUrl = import.meta.env.VITE_CALENDLY_URL?.trim() ?? "";
 
-/** Couleurs charte Alicia pour le widget Calendly (sans #). */
 function calendlyUrlWithTheme(url) {
   try {
     const parsed = new URL(url);
@@ -69,7 +68,7 @@ export default function RDV() {
 
   useEffect(() => {
     if (!calendlyUrl || !bookingAllowed) {
-      setReady(false);
+      // setReady(false);
       return;
     }
     loadCalendlyAssets()
@@ -106,23 +105,27 @@ export default function RDV() {
 
       <div className="rdv-columns">
         <div className="rdv-card">
+          <h2 className="rdv-steps-title">{t("rdv.cardTitle")}</h2>
           <p className="rdv-intro">{t("rdv.intro")}</p>
           {calendlyUrl ? (
             <div className="rdv-card-actions">
-              {bookingAllowed ? (
-                <button
-                  type="button"
-                  className="btn-rdv rdv-trigger"
-                  aria-disabled={!ready}
-                  onClick={() => {
-                    if (ready) openCalendly();
-                  }}
-                >
-                  {t("rdv.pickSlot")}
-                </button>
-              ) : (
+              <button
+                type="button"
+                className="btn-rdv rdv-trigger"
+                aria-disabled={bookingAllowed && !ready}
+                onClick={() => {
+                  if (!bookingAllowed) {
+                    openCookiePreferences();
+                    return;
+                  }
+                  if (ready) openCalendly();
+                }}
+              >
+                {t("rdv.pickSlot")}
+              </button>
+              {/* {!bookingAllowed ? (
                 <p className="rdv-cookie-notice">{t("rdv.cookieNotice")}</p>
-              )}
+              ) : null}
               <a
                 className="rdv-fallback-link"
                 href={calendlyUrl}
@@ -130,8 +133,8 @@ export default function RDV() {
                 rel="noopener noreferrer"
               >
                 {t("rdv.openNewTab")}
-              </a>
-              {!bookingAllowed ? (
+              </a> */}
+              {/* {!bookingAllowed ? (
                 <button
                   type="button"
                   className="rdv-cookie-manage"
@@ -139,7 +142,7 @@ export default function RDV() {
                 >
                   {t("rdv.manageCookies")}
                 </button>
-              ) : null}
+              ) : null} */}
             </div>
           ) : null}
         </div>
